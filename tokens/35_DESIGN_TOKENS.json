@@ -1,0 +1,68 @@
+{
+  "colors": {
+    "light": {
+      "background": "hsl(30, 15%, 96%)",
+      "text": "hsl(0, 0%, 12%)",
+      "accent": "hsl(24, 85%, 50%)",
+      "muted": "hsl(0, 0%, 45%)",
+      "border": "hsl(0, 0%, 85%)"
+    },
+    "dark": {
+      "background": "hsl(0, 0%, 7%)",
+      "text": "hsl(30, 8%, 92%)",
+      "accent": "hsl(24, 75%, 55%)",
+      "muted": "hsl(0, 0%, 55%)",
+      "border": "hsl(0, 0%, 20%)"
+    }
+  },
+  "typography": {
+    "display": {
+      "min_size": "2.5rem",
+      "max_size": "6rem",
+      "leading": 1.05,
+      "tracking": "-0.03em",
+      "font_weight": 300
+    },
+    "body": {
+      "min_size": "1rem",
+      "max_size": "1.25rem",
+      "leading": 1.6,
+      "tracking": "-0.01em",
+      "font_weight": 400
+    },
+    "mono": {
+      "size": "0.75rem",
+      "leading": 1.5,
+      "tracking": "0.08em",
+      "font_weight": 400
+    }
+  },
+  "spacing": {
+    "margins": {
+      "desktop": "8vw",
+      "mobile": "5vw"
+    },
+    "padding": {
+      "small": "1rem",
+      "medium": "2rem",
+      "large": "4rem",
+      "huge": "8rem"
+    }
+  },
+  "motion": {
+    "easings": {
+      "sovereign": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "hover": "cubic-bezier(0.25, 1, 0.5, 1)"
+    },
+    "duration": {
+      "instant": "100ms",
+      "micro": "200ms",
+      "standard": "600ms",
+      "cinematic": "1200ms"
+    }
+  },
+  "layout": {
+    "grid_columns": 12,
+    "gap": "2rem"
+  }
+}

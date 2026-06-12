@@ -1,0 +1,1352 @@
+{
+  "DESIGN_OS": {
+    "priority": 100,
+    "importance": 100,
+    "retrieval_cost": 2,
+    "system_type": "design",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 100,
+    "depends_on": [],
+    "load_before": [
+      "ART_DIRECTION",
+      "TYPOGRAPHY_SYSTEM",
+      "STORYTELLING_SYSTEM"
+    ],
+    "load_after": [],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "ART_DIRECTION": {
+    "priority": 95,
+    "importance": 98,
+    "retrieval_cost": 2,
+    "system_type": "design",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 95,
+    "depends_on": [
+      "DESIGN_OS"
+    ],
+    "load_before": [
+      "TYPOGRAPHY_SYSTEM",
+      "STORYTELLING_SYSTEM"
+    ],
+    "load_after": [
+      "DESIGN_OS"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "TYPOGRAPHY_SYSTEM": {
+    "priority": 95,
+    "importance": 98,
+    "retrieval_cost": 2,
+    "system_type": "design",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 95,
+    "depends_on": [
+      "DESIGN_OS"
+    ],
+    "load_before": [
+      "LAYOUT_ENGINE",
+      "COLOR_SYSTEM"
+    ],
+    "load_after": [
+      "ART_DIRECTION"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "BUSINESS_STRATEGY_SYSTEM": {
+    "priority": 95,
+    "importance": 97,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 95,
+    "depends_on": [
+      "DESIGN_OS"
+    ],
+    "load_before": [
+      "CREATIVE_INTELLIGENCE_SYSTEM",
+      "BRAND_STRATEGY_OS"
+    ],
+    "load_after": [
+      "DESIGN_OS"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:redesign",
+      "mode:brand_creation",
+      "mode:enterprise_product"
+    ]
+  },
+  "CREATIVE_INTELLIGENCE_SYSTEM": {
+    "priority": 92,
+    "importance": 95,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 92,
+    "depends_on": [
+      "DESIGN_OS",
+      "BUSINESS_STRATEGY_SYSTEM"
+    ],
+    "load_before": [
+      "DESIGN_RESEARCH_SYSTEM"
+    ],
+    "load_after": [
+      "BUSINESS_STRATEGY_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:redesign",
+      "mode:brand_creation"
+    ]
+  },
+  "DESIGN_RESEARCH_SYSTEM": {
+    "priority": 90,
+    "importance": 92,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 90,
+    "depends_on": [
+      "DESIGN_OS",
+      "CREATIVE_INTELLIGENCE_SYSTEM"
+    ],
+    "load_before": [
+      "PROJECT_KICKOFF_SYSTEM",
+      "BRAND_STRATEGY_OS"
+    ],
+    "load_after": [
+      "CREATIVE_INTELLIGENCE_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:redesign",
+      "mode:brand_creation"
+    ]
+  },
+  "PROJECT_KICKOFF_SYSTEM": {
+    "priority": 90,
+    "importance": 90,
+    "retrieval_cost": 2,
+    "system_type": "strategy",
+    "criticality": "high",
+    "retrieval_mode": "eager",
+    "cache_priority": 90,
+    "depends_on": [
+      "DESIGN_RESEARCH_SYSTEM"
+    ],
+    "load_before": [
+      "BRAND_STRATEGY_OS"
+    ],
+    "load_after": [
+      "DESIGN_RESEARCH_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:redesign",
+      "mode:brand_creation"
+    ]
+  },
+  "BRAND_STRATEGY_OS": {
+    "priority": 90,
+    "importance": 92,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 90,
+    "depends_on": [
+      "DESIGN_OS",
+      "PROJECT_KICKOFF_SYSTEM"
+    ],
+    "load_before": [
+      "STORYTELLING_SYSTEM",
+      "EXPERIENCE_ARCHITECTURE_SYSTEM"
+    ],
+    "load_after": [
+      "PROJECT_KICKOFF_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:brand_creation",
+      "mode:portfolio"
+    ]
+  },
+  "STORYTELLING_SYSTEM": {
+    "priority": 90,
+    "importance": 90,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 90,
+    "depends_on": [
+      "DESIGN_OS",
+      "TYPOGRAPHY_SYSTEM",
+      "BRAND_STRATEGY_OS"
+    ],
+    "load_before": [
+      "EXPERIENCE_ARCHITECTURE_SYSTEM"
+    ],
+    "load_after": [
+      "BRAND_STRATEGY_OS"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:brand_creation",
+      "mode:portfolio"
+    ]
+  },
+  "EXPERIENCE_ARCHITECTURE_SYSTEM": {
+    "priority": 90,
+    "importance": 92,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 90,
+    "depends_on": [
+      "DESIGN_OS",
+      "STORYTELLING_SYSTEM"
+    ],
+    "load_before": [
+      "CONTENT_DESIGN_SYSTEM"
+    ],
+    "load_after": [
+      "STORYTELLING_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:brand_creation",
+      "mode:portfolio",
+      "mode:ai_product",
+      "mode:enterprise_product"
+    ]
+  },
+  "CONTENT_DESIGN_SYSTEM": {
+    "priority": 88,
+    "importance": 90,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 88,
+    "depends_on": [
+      "DESIGN_OS",
+      "EXPERIENCE_ARCHITECTURE_SYSTEM"
+    ],
+    "load_before": [
+      "VISUAL_RULES"
+    ],
+    "load_after": [
+      "EXPERIENCE_ARCHITECTURE_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:brand_creation",
+      "mode:portfolio"
+    ]
+  },
+  "VISUAL_RULES": {
+    "priority": 85,
+    "importance": 88,
+    "retrieval_cost": 2,
+    "system_type": "design",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 85,
+    "depends_on": [
+      "DESIGN_OS",
+      "TYPOGRAPHY_SYSTEM"
+    ],
+    "load_before": [
+      "LAYOUT_ENGINE",
+      "COLOR_SYSTEM"
+    ],
+    "load_after": [
+      "CONTENT_DESIGN_SYSTEM"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "MOTION_SYSTEM": {
+    "priority": 85,
+    "importance": 88,
+    "retrieval_cost": 3,
+    "system_type": "motion",
+    "criticality": "core",
+    "retrieval_mode": "lazy",
+    "cache_priority": 85,
+    "depends_on": [
+      "DESIGN_OS",
+      "TYPOGRAPHY_SYSTEM"
+    ],
+    "load_before": [
+      "INTERACTION_SYSTEM"
+    ],
+    "load_after": [
+      "VISUAL_RULES"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:ai_product",
+      "mode:portfolio"
+    ]
+  },
+  "INTERACTION_SYSTEM": {
+    "priority": 85,
+    "importance": 88,
+    "retrieval_cost": 3,
+    "system_type": "interaction",
+    "criticality": "core",
+    "retrieval_mode": "lazy",
+    "cache_priority": 85,
+    "depends_on": [
+      "DESIGN_OS",
+      "MOTION_SYSTEM"
+    ],
+    "load_before": [
+      "LAYOUT_ENGINE"
+    ],
+    "load_after": [
+      "MOTION_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:ai_product",
+      "mode:portfolio"
+    ]
+  },
+  "LAYOUT_ENGINE": {
+    "priority": 80,
+    "importance": 85,
+    "retrieval_cost": 3,
+    "system_type": "architecture",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 80,
+    "depends_on": [
+      "DESIGN_OS",
+      "TYPOGRAPHY_SYSTEM",
+      "VISUAL_RULES",
+      "INTERACTION_SYSTEM"
+    ],
+    "load_before": [
+      "COLOR_SYSTEM",
+      "DESIGN_TOKENS"
+    ],
+    "load_after": [
+      "INTERACTION_SYSTEM"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "COLOR_SYSTEM": {
+    "priority": 80,
+    "importance": 82,
+    "retrieval_cost": 2,
+    "system_type": "design",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 80,
+    "depends_on": [
+      "DESIGN_OS",
+      "LAYOUT_ENGINE"
+    ],
+    "load_before": [
+      "DESIGN_TOKENS"
+    ],
+    "load_after": [
+      "LAYOUT_ENGINE"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "DESIGN_TOKENS": {
+    "priority": 80,
+    "importance": 95,
+    "retrieval_cost": 1,
+    "system_type": "tokens",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 90,
+    "depends_on": [
+      "TYPOGRAPHY_SYSTEM",
+      "LAYOUT_ENGINE",
+      "COLOR_SYSTEM"
+    ],
+    "load_before": [
+      "COMPONENT_SYSTEM"
+    ],
+    "load_after": [
+      "COLOR_SYSTEM"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "INFORMATION_ARCHITECTURE": {
+    "priority": 78,
+    "importance": 80,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 78,
+    "depends_on": [
+      "DESIGN_OS",
+      "LAYOUT_ENGINE"
+    ],
+    "load_before": [
+      "CONVERSION_ARCHITECTURE"
+    ],
+    "load_after": [
+      "DESIGN_TOKENS"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:enterprise_product",
+      "mode:redesign"
+    ]
+  },
+  "CONVERSION_ARCHITECTURE": {
+    "priority": 78,
+    "importance": 82,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 78,
+    "depends_on": [
+      "DESIGN_OS",
+      "INFORMATION_ARCHITECTURE"
+    ],
+    "load_before": [
+      "PREMIUM_PERCEPTION_SYSTEM"
+    ],
+    "load_after": [
+      "INFORMATION_ARCHITECTURE"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:enterprise_product",
+      "mode:redesign"
+    ]
+  },
+  "PREMIUM_PERCEPTION_SYSTEM": {
+    "priority": 75,
+    "importance": 85,
+    "retrieval_cost": 3,
+    "system_type": "strategy",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 75,
+    "depends_on": [
+      "DESIGN_OS",
+      "CONVERSION_ARCHITECTURE"
+    ],
+    "load_before": [
+      "FRONTEND_ARCHITECTURE",
+      "CREATIVE_TECH_SYSTEM"
+    ],
+    "load_after": [
+      "CONVERSION_ARCHITECTURE"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:brand_creation",
+      "mode:redesign"
+    ]
+  },
+  "FRONTEND_ARCHITECTURE": {
+    "priority": 75,
+    "importance": 80,
+    "retrieval_cost": 3,
+    "system_type": "architecture",
+    "criticality": "high",
+    "retrieval_mode": "eager",
+    "cache_priority": 75,
+    "depends_on": [
+      "DESIGN_OS",
+      "LAYOUT_ENGINE",
+      "DESIGN_TOKENS"
+    ],
+    "load_before": [
+      "CREATIVE_TECH_SYSTEM"
+    ],
+    "load_after": [
+      "PREMIUM_PERCEPTION_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:enterprise_product",
+      "mode:ai_product"
+    ]
+  },
+  "CREATIVE_TECH_SYSTEM": {
+    "priority": 75,
+    "importance": 80,
+    "retrieval_cost": 4,
+    "system_type": "architecture",
+    "criticality": "high",
+    "retrieval_mode": "eager",
+    "cache_priority": 75,
+    "depends_on": [
+      "FRONTEND_ARCHITECTURE"
+    ],
+    "load_before": [
+      "COMPONENT_SYSTEM"
+    ],
+    "load_after": [
+      "FRONTEND_ARCHITECTURE"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:ai_product"
+    ]
+  },
+  "COMPONENT_SYSTEM": {
+    "priority": 70,
+    "importance": 85,
+    "retrieval_cost": 3,
+    "system_type": "systems",
+    "criticality": "core",
+    "retrieval_mode": "lazy",
+    "cache_priority": 70,
+    "depends_on": [
+      "DESIGN_TOKENS",
+      "CREATIVE_TECH_SYSTEM"
+    ],
+    "load_before": [
+      "LUXURY_BRAND_SYSTEM",
+      "AI_PRODUCT_SYSTEM",
+      "ENTERPRISE_UX_SYSTEM"
+    ],
+    "load_after": [
+      "CREATIVE_TECH_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:ai_product",
+      "mode:enterprise_product"
+    ]
+  },
+  "ANIMATION_LIBRARY": {
+    "priority": 70,
+    "importance": 82,
+    "retrieval_cost": 3,
+    "system_type": "motion",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 70,
+    "depends_on": [
+      "MOTION_SYSTEM",
+      "COMPONENT_SYSTEM"
+    ],
+    "load_before": [
+      "SCROLL_STORY_LIBRARY"
+    ],
+    "load_after": [
+      "COMPONENT_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:ai_product",
+      "mode:portfolio"
+    ]
+  },
+  "SCROLL_STORY_LIBRARY": {
+    "priority": 70,
+    "importance": 80,
+    "retrieval_cost": 3,
+    "system_type": "motion",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 70,
+    "depends_on": [
+      "INTERACTION_SYSTEM",
+      "ANIMATION_LIBRARY"
+    ],
+    "load_before": [
+      "LUXURY_BRAND_SYSTEM"
+    ],
+    "load_after": [
+      "ANIMATION_LIBRARY"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:portfolio"
+    ]
+  },
+  "LUXURY_BRAND_SYSTEM": {
+    "priority": 70,
+    "importance": 75,
+    "retrieval_cost": 3,
+    "system_type": "systems",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 70,
+    "depends_on": [
+      "COMPONENT_SYSTEM",
+      "SCROLL_STORY_LIBRARY"
+    ],
+    "load_before": [
+      "AI_PRODUCT_SYSTEM"
+    ],
+    "load_after": [
+      "SCROLL_STORY_LIBRARY"
+    ],
+    "activation_rules": [
+      "mode:brand_creation",
+      "mode:portfolio"
+    ]
+  },
+  "AI_PRODUCT_SYSTEM": {
+    "priority": 70,
+    "importance": 75,
+    "retrieval_cost": 3,
+    "system_type": "systems",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 70,
+    "depends_on": [
+      "COMPONENT_SYSTEM"
+    ],
+    "load_before": [
+      "ENTERPRISE_UX_SYSTEM"
+    ],
+    "load_after": [
+      "COMPONENT_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:ai_product"
+    ]
+  },
+  "ENTERPRISE_UX_SYSTEM": {
+    "priority": 68,
+    "importance": 70,
+    "retrieval_cost": 4,
+    "system_type": "systems",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 68,
+    "depends_on": [
+      "COMPONENT_SYSTEM"
+    ],
+    "load_before": [
+      "PORTFOLIO_SYSTEM"
+    ],
+    "load_after": [
+      "COMPONENT_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:enterprise_product"
+    ]
+  },
+  "PORTFOLIO_SYSTEM": {
+    "priority": 68,
+    "importance": 70,
+    "retrieval_cost": 3,
+    "system_type": "systems",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 68,
+    "depends_on": [
+      "COMPONENT_SYSTEM"
+    ],
+    "load_before": [
+      "ENTERPRISE_CLIENT_SYSTEM"
+    ],
+    "load_after": [
+      "PORTFOLIO_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:portfolio"
+    ]
+  },
+  "ENTERPRISE_CLIENT_SYSTEM": {
+    "priority": 65,
+    "importance": 70,
+    "retrieval_cost": 3,
+    "system_type": "systems",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 65,
+    "depends_on": [
+      "DESIGN_OS",
+      "COMPONENT_SYSTEM"
+    ],
+    "load_before": [
+      "FUTURE_PROOFING_SYSTEM"
+    ],
+    "load_after": [
+      "COMPONENT_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:enterprise_product"
+    ]
+  },
+  "FUTURE_PROOFING_SYSTEM": {
+    "priority": 65,
+    "importance": 68,
+    "retrieval_cost": 3,
+    "system_type": "systems",
+    "criticality": "optional",
+    "retrieval_mode": "lazy",
+    "cache_priority": 65,
+    "depends_on": [
+      "DESIGN_OS"
+    ],
+    "load_before": [
+      "DESIGN_ANTI_PATTERNS"
+    ],
+    "load_after": [
+      "ENTERPRISE_CLIENT_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:enterprise_product"
+    ]
+  },
+  "DESIGN_ANTI_PATTERNS": {
+    "priority": 65,
+    "importance": 80,
+    "retrieval_cost": 2,
+    "system_type": "design",
+    "criticality": "high",
+    "retrieval_mode": "eager",
+    "cache_priority": 65,
+    "depends_on": [
+      "DESIGN_OS"
+    ],
+    "load_before": [
+      "DESIGN_DECISION_ENGINE"
+    ],
+    "load_after": [
+      "DESIGN_OS"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "DESIGN_DECISION_ENGINE": {
+    "priority": 65,
+    "importance": 85,
+    "retrieval_cost": 2,
+    "system_type": "review",
+    "criticality": "core",
+    "retrieval_mode": "eager",
+    "cache_priority": 65,
+    "depends_on": [
+      "DESIGN_ANTI_PATTERNS"
+    ],
+    "load_before": [
+      "AWWWARDS_EVALUATION_SYSTEM"
+    ],
+    "load_after": [
+      "DESIGN_ANTI_PATTERNS"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "AWWWARDS_EVALUATION_SYSTEM": {
+    "priority": 65,
+    "importance": 80,
+    "retrieval_cost": 2,
+    "system_type": "review",
+    "criticality": "high",
+    "retrieval_mode": "eager",
+    "cache_priority": 65,
+    "depends_on": [
+      "DESIGN_DECISION_ENGINE"
+    ],
+    "load_before": [
+      "CREATIVE_QA"
+    ],
+    "load_after": [
+      "DESIGN_DECISION_ENGINE"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "CREATIVE_QA": {
+    "priority": 60,
+    "importance": 80,
+    "retrieval_cost": 3,
+    "system_type": "review",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 60,
+    "depends_on": [
+      "AWWWARDS_EVALUATION_SYSTEM"
+    ],
+    "load_before": [
+      "AGENCY_REVIEW_SYSTEM"
+    ],
+    "load_after": [
+      "AWWWARDS_EVALUATION_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_audit",
+      "mode:website_generation",
+      "mode:redesign"
+    ]
+  },
+  "AGENCY_REVIEW_SYSTEM": {
+    "priority": 60,
+    "importance": 75,
+    "retrieval_cost": 3,
+    "system_type": "review",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 60,
+    "depends_on": [
+      "CREATIVE_QA"
+    ],
+    "load_before": [
+      "DESIGN_GOVERNANCE_SYSTEM"
+    ],
+    "load_after": [
+      "CREATIVE_QA"
+    ],
+    "activation_rules": [
+      "mode:website_audit",
+      "mode:website_generation"
+    ]
+  },
+  "DESIGN_GOVERNANCE_SYSTEM": {
+    "priority": 60,
+    "importance": 82,
+    "retrieval_cost": 3,
+    "system_type": "review",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 60,
+    "depends_on": [
+      "AGENCY_REVIEW_SYSTEM"
+    ],
+    "load_before": [
+      "CREATIVE_DIRECTION_GENERATOR"
+    ],
+    "load_after": [
+      "AGENCY_REVIEW_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_audit",
+      "mode:website_generation",
+      "mode:enterprise_product"
+    ]
+  },
+  "CREATIVE_DIRECTION_GENERATOR": {
+    "priority": 60,
+    "importance": 70,
+    "retrieval_cost": 2,
+    "system_type": "review",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 60,
+    "depends_on": [
+      "DESIGN_GOVERNANCE_SYSTEM"
+    ],
+    "load_before": [
+      "FINAL_CREATIVE_REVIEW"
+    ],
+    "load_after": [
+      "DESIGN_GOVERNANCE_SYSTEM"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:brand_creation"
+    ]
+  },
+  "FINAL_CREATIVE_REVIEW": {
+    "priority": 55,
+    "importance": 85,
+    "retrieval_cost": 3,
+    "system_type": "review",
+    "criticality": "core",
+    "retrieval_mode": "lazy",
+    "cache_priority": 55,
+    "depends_on": [
+      "CREATIVE_DIRECTION_GENERATOR"
+    ],
+    "load_before": [
+      "WORLD_CLASS_BENCHMARKS"
+    ],
+    "load_after": [
+      "CREATIVE_DIRECTION_GENERATOR"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "WORLD_CLASS_BENCHMARKS": {
+    "priority": 50,
+    "importance": 80,
+    "retrieval_cost": 3,
+    "system_type": "library",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 50,
+    "depends_on": [
+      "FINAL_CREATIVE_REVIEW"
+    ],
+    "load_before": [
+      "LAYOUT_PATTERNS_LIBRARY"
+    ],
+    "load_after": [
+      "FINAL_CREATIVE_REVIEW"
+    ],
+    "activation_rules": [
+      "mode:website_audit",
+      "mode:website_generation",
+      "mode:redesign"
+    ]
+  },
+  "LAYOUT_PATTERNS_LIBRARY": {
+    "priority": 50,
+    "importance": 75,
+    "retrieval_cost": 3,
+    "system_type": "library",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 50,
+    "depends_on": [
+      "WORLD_CLASS_BENCHMARKS"
+    ],
+    "load_before": [
+      "CASE_STUDY_LIBRARY"
+    ],
+    "load_after": [
+      "WORLD_CLASS_BENCHMARKS"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:portfolio"
+    ]
+  },
+  "CASE_STUDY_LIBRARY": {
+    "priority": 50,
+    "importance": 70,
+    "retrieval_cost": 3,
+    "system_type": "library",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 50,
+    "depends_on": [
+      "LAYOUT_PATTERNS_LIBRARY"
+    ],
+    "load_before": [
+      "VISUAL_LANGUAGE_LIBRARY"
+    ],
+    "load_after": [
+      "LAYOUT_PATTERNS_LIBRARY"
+    ],
+    "activation_rules": [
+      "mode:portfolio"
+    ]
+  },
+  "VISUAL_LANGUAGE_LIBRARY": {
+    "priority": 50,
+    "importance": 70,
+    "retrieval_cost": 3,
+    "system_type": "library",
+    "criticality": "medium",
+    "retrieval_mode": "lazy",
+    "cache_priority": 50,
+    "depends_on": [
+      "CASE_STUDY_LIBRARY"
+    ],
+    "load_before": [
+      "SYSTEM_PROMPTS_LIBRARY"
+    ],
+    "load_after": [
+      "CASE_STUDY_LIBRARY"
+    ],
+    "activation_rules": [
+      "mode:website_generation",
+      "mode:portfolio"
+    ]
+  },
+  "SYSTEM_PROMPTS_LIBRARY": {
+    "priority": 50,
+    "importance": 85,
+    "retrieval_cost": 2,
+    "system_type": "library",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 50,
+    "depends_on": [
+      "VISUAL_LANGUAGE_LIBRARY"
+    ],
+    "load_before": [
+      "BENCHMARK_TRACEABILITY_SYSTEM"
+    ],
+    "load_after": [
+      "VISUAL_LANGUAGE_LIBRARY"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "BENCHMARK_TRACEABILITY_SYSTEM": {
+    "priority": 50,
+    "importance": 85,
+    "retrieval_cost": 2,
+    "system_type": "library",
+    "criticality": "high",
+    "retrieval_mode": "lazy",
+    "cache_priority": 50,
+    "depends_on": [
+      "SYSTEM_PROMPTS_LIBRARY"
+    ],
+    "load_before": [],
+    "load_after": [
+      "SYSTEM_PROMPTS_LIBRARY"
+    ],
+    "activation_rules": [
+      "*"
+    ]
+  },
+  "benchmarks": {
+    "active_theory": {
+      "confidence": "direct",
+      "sources": [
+        "https://activetheory.net"
+      ],
+      "principles": [
+        "[DIRECT] Mounted entire experience on single WebGL canvas element selector #Stage.",
+        "[DIRECT] Structured NB Architekt monospaced typography programmatically.",
+        "[INFERRED] Spatial 3D environment storytelling increases user attention duration."
+      ],
+      "conflicts": [
+        "[DIRECT] Active Theory WebGL canvas-only stage forces rendering overhead and low accessibility compared to Stripe's clean semantic markup."
+      ],
+      "recommended_for": [
+        "Creative Portfolio",
+        "Product Launch"
+      ],
+      "avoid_for": [
+        "Startup SaaS",
+        "Enterprise Platform"
+      ],
+      "influences": [
+        "ART_DIRECTION",
+        "MOTION_SYSTEM",
+        "CREATIVE_TECH_SYSTEM",
+        "EXPERIENCE_ARCHITECTURE_SYSTEM",
+        "AWWWARDS_EVALUATION_SYSTEM",
+        "ANIMATION_LIBRARY",
+        "SCROLL_STORY_LIBRARY",
+        "PORTFOLIO_SYSTEM",
+        "VISUAL_LANGUAGE_LIBRARY",
+        "SYSTEM_PROMPTS_LIBRARY"
+      ]
+    },
+    "buttermax": {
+      "confidence": "direct",
+      "sources": [
+        "https://buttermax.net"
+      ],
+      "principles": [
+        "[DIRECT] Framework configured on Next.js with Sanity CMS API variables.",
+        "[DIRECT] Font loading handles Suisse Intl sans-grotesque type assets.",
+        "[INFERRED] Organic typographic pacing and raw grid layouts denote rate justification."
+      ],
+      "conflicts": [
+        "[INFERRED] Buttermax raw minimalist grids conflict with Resn's liquid audio-visual media setups."
+      ],
+      "recommended_for": [
+        "Luxury Brand",
+        "Agency Website",
+        "Startup SaaS"
+      ],
+      "avoid_for": [
+        "AI Product"
+      ],
+      "influences": [
+        "TYPOGRAPHY_SYSTEM",
+        "COLOR_SYSTEM",
+        "CONTENT_DESIGN_SYSTEM",
+        "CONVERSION_ARCHITECTURE",
+        "DESIGN_DECISION_ENGINE",
+        "LAYOUT_PATTERNS_LIBRARY",
+        "CASE_STUDY_LIBRARY",
+        "LUXURY_BRAND_SYSTEM",
+        "DESIGN_TOKENS",
+        "DESIGN_GOVERNANCE_SYSTEM"
+      ]
+    },
+    "resn": {
+      "confidence": "direct",
+      "sources": [
+        "https://resn.co.nz"
+      ],
+      "principles": [
+        "[DIRECT] Script loader managed via RequireJS module system with fallback checks.",
+        "[DIRECT] Views mounted on solid background-black #000000 canvas overlay.",
+        "[INFERRED] Liquid timing loops and ambient audio build emotional engagement."
+      ],
+      "conflicts": [
+        "[DIRECT] Audio-visual loader gates conflict with Stripe's frictionless instant payment checkout goals."
+      ],
+      "recommended_for": [
+        "Creative Portfolio"
+      ],
+      "avoid_for": [
+        "Enterprise Platform",
+        "Startup SaaS"
+      ],
+      "influences": [
+        "MOTION_SYSTEM",
+        "INTERACTION_SYSTEM",
+        "STORYTELLING_SYSTEM",
+        "CREATIVE_TECH_SYSTEM",
+        "AWWWARDS_EVALUATION_SYSTEM",
+        "ANIMATION_LIBRARY",
+        "SCROLL_STORY_LIBRARY",
+        "PORTFOLIO_SYSTEM",
+        "VISUAL_LANGUAGE_LIBRARY"
+      ]
+    },
+    "locomotive": {
+      "confidence": "direct",
+      "sources": [
+        "https://locomotive.ca"
+      ],
+      "principles": [
+        "[DIRECT] Performance binds to Locomotive Scroll viewport speed adjustments.",
+        "[DIRECT] Twig preloader c-preloader templates and dynamic GLB 3D assets.",
+        "[INFERRED] Asymmetric typographic columns contrast fluid scroll motions."
+      ],
+      "conflicts": [
+        "[INFERRED] Off-center asymmetrical layouts conflict with Instrument's high-density client data tables."
+      ],
+      "recommended_for": [
+        "Creative Portfolio",
+        "Agency Website",
+        "Cultural Institution"
+      ],
+      "avoid_for": [
+        "Enterprise Platform"
+      ],
+      "influences": [
+        "TYPOGRAPHY_SYSTEM",
+        "INTERACTION_SYSTEM",
+        "LAYOUT_ENGINE",
+        "FRONTEND_ARCHITECTURE",
+        "EXPERIENCE_ARCHITECTURE_SYSTEM",
+        "ANIMATION_LIBRARY",
+        "SCROLL_STORY_LIBRARY",
+        "LAYOUT_PATTERNS_LIBRARY",
+        "CASE_STUDY_LIBRARY",
+        "PORTFOLIO_SYSTEM"
+      ]
+    },
+    "instrument": {
+      "confidence": "direct",
+      "sources": [
+        "https://www.instrument.com"
+      ],
+      "principles": [
+        "[DIRECT] Nuxt.js configuration loading data fields via Storyblok CMS endpoints.",
+        "[DIRECT] Tailwind spacing rules compiled via custom Abacus design tokens.",
+        "[INFERRED] Result-focused editorial outcomes showcase commands partner authority."
+      ],
+      "conflicts": [
+        "[INFERRED] Spacious editorial layout columns conflict with Bureau Borsche's text-centric brutalist list views."
+      ],
+      "recommended_for": [
+        "Enterprise Platform",
+        "Agency Website"
+      ],
+      "avoid_for": [
+        "Fashion Brand"
+      ],
+      "influences": [
+        "INFORMATION_ARCHITECTURE",
+        "ENTERPRISE_CLIENT_SYSTEM",
+        "ENTERPRISE_UX_SYSTEM",
+        "CONVERSION_ARCHITECTURE",
+        "DESIGN_DECISION_ENGINE",
+        "CASE_STUDY_LIBRARY",
+        "DESIGN_GOVERNANCE_SYSTEM",
+        "SYSTEM_PROMPTS_LIBRARY"
+      ]
+    },
+    "basic_agency": {
+      "confidence": "direct",
+      "sources": [
+        "https://basicagency.com"
+      ],
+      "principles": [
+        "[DIRECT] Layout overlays custom SVG noise backdrop class .noise_noise__N0mbn.",
+        "[DIRECT] Colors restrict to grayscale and beige #E8E6E3 styling parameters.",
+        "[INFERRED] Culture-forward design hierarchies reject standard corporate templates."
+      ],
+      "conflicts": [
+        "[INFERRED] Monochromatic layouts conflict with luxury brand expectations for rich visual media scaling."
+      ],
+      "recommended_for": [
+        "Fashion Brand",
+        "Agency Website"
+      ],
+      "avoid_for": [
+        "Luxury Brand"
+      ],
+      "influences": [
+        "DESIGN_OS",
+        "VISUAL_RULES",
+        "STORYTELLING_SYSTEM",
+        "PREMIUM_PERCEPTION_SYSTEM",
+        "DESIGN_DECISION_ENGINE",
+        "AWWWARDS_EVALUATION_SYSTEM",
+        "LAYOUT_PATTERNS_LIBRARY",
+        "CASE_STUDY_LIBRARY",
+        "VISUAL_LANGUAGE_LIBRARY",
+        "DESIGN_TOKENS"
+      ]
+    },
+    "fantasy_interactive": {
+      "confidence": "direct",
+      "sources": [
+        "https://fantasy.co"
+      ],
+      "principles": [
+        "[DIRECT] Styles loading Tailwind CSS and local copy assets of Suisse Intl typeface.",
+        "[DIRECT] Custom controls configured on HTML5 video showcase elements.",
+        "[INFERRED] Product walkways balance visual styling with utility for tech corporations."
+      ],
+      "conflicts": [
+        "[INFERRED] Dense product grids conflict with Bureau Borsche's minimal layout restrictions."
+      ],
+      "recommended_for": [
+        "AI Product",
+        "Product Launch",
+        "Enterprise Platform"
+      ],
+      "avoid_for": [
+        "Luxury Brand"
+      ],
+      "influences": [
+        "COMPONENT_SYSTEM",
+        "EXPERIENCE_ARCHITECTURE_SYSTEM",
+        "CONVERSION_ARCHITECTURE",
+        "ENTERPRISE_CLIENT_SYSTEM",
+        "AWWWARDS_EVALUATION_SYSTEM",
+        "FUTURE_PROOFING_SYSTEM",
+        "ENTERPRISE_UX_SYSTEM",
+        "AI_PRODUCT_SYSTEM"
+      ]
+    },
+    "dogstudio": {
+      "confidence": "direct",
+      "sources": [
+        "https://dogstudio.co"
+      ],
+      "principles": [
+        "[DIRECT] WASM check scripts load dog.js to render 3D character mesh elements.",
+        "[DIRECT] Animates display typography sequentially via .fx-letter wrappers.",
+        "[DIRECT] Pulsing-ui absolute volume buttons control ambient site audio loops."
+      ],
+      "conflicts": [
+        "[DIRECT] Heavy WebAssembly 3D character staging load conflicts with Linear's 100ms low-latency goals."
+      ],
+      "recommended_for": [
+        "Creative Portfolio"
+      ],
+      "avoid_for": [
+        "Startup SaaS"
+      ],
+      "influences": [
+        "MOTION_SYSTEM",
+        "INTERACTION_SYSTEM",
+        "CREATIVE_TECH_SYSTEM",
+        "CREATIVE_DIRECTION_GENERATOR",
+        "ANIMATION_LIBRARY",
+        "SCROLL_STORY_LIBRARY",
+        "PORTFOLIO_SYSTEM",
+        "VISUAL_LANGUAGE_LIBRARY"
+      ]
+    },
+    "mediamonks": {
+      "confidence": "direct",
+      "sources": [
+        "https://www.monks.com"
+      ],
+      "principles": [
+        "[DIRECT] Drupal contrib backend routes loading custom data-component tags.",
+        "[DIRECT] Google ReCAPTCHA Enterprise security validation on form wrappers.",
+        "[DIRECT] Navigation elements animated using custom Lottie runtime JSON files."
+      ],
+      "conflicts": [
+        "[INFERRED] Decluttered corporate modular component frameworks conflict with Bureau Borsche's custom graphic layouts."
+      ],
+      "recommended_for": [
+        "Enterprise Platform",
+        "AI Product"
+      ],
+      "avoid_for": [
+        "Luxury Brand"
+      ],
+      "influences": [
+        "COMPONENT_SYSTEM",
+        "FUTURE_PROOFING_SYSTEM",
+        "ENTERPRISE_UX_SYSTEM",
+        "DESIGN_GOVERNANCE_SYSTEM",
+        "CREATIVE_TECH_SYSTEM"
+      ]
+    },
+    "bureau_borsche": {
+      "confidence": "secondary",
+      "sources": [
+        "https://www.awwwards.com/bureau-borsche/",
+        "https://brutalistwebsites.com/bureau-borsche/",
+        "https://www.typewolf.com/site-of-the-day/bureau-borsche"
+      ],
+      "principles": [
+        "[SECONDARY] Large bold serif headings paired with Courier monospaced layouts.",
+        "[SECONDARY] Flat background layers featuring thin 1px grid border divisions.",
+        "[SECONDARY] Immediate mouse hovers and zero decorative slide transitions."
+      ],
+      "conflicts": [
+        "[SECONDARY] Stark graphic brutalism and zero animations conflict with Resn's liquid audio-visual engagement strategies."
+      ],
+      "recommended_for": [
+        "Fashion Brand",
+        "Luxury Brand",
+        "Cultural Institution"
+      ],
+      "avoid_for": [
+        "Startup SaaS"
+      ],
+      "influences": [
+        "DESIGN_OS",
+        "TYPOGRAPHY_SYSTEM",
+        "LAYOUT_ENGINE",
+        "PORTFOLIO_SYSTEM",
+        "CREATIVE_DIRECTION_GENERATOR",
+        "LAYOUT_PATTERNS_LIBRARY",
+        "LUXURY_BRAND_SYSTEM",
+        "VISUAL_LANGUAGE_LIBRARY",
+        "DESIGN_TOKENS"
+      ]
+    }
+  }
+}
