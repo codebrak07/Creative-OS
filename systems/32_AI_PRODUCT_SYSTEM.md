@@ -1,28 +1,23 @@
 # 32_AI_PRODUCT_SYSTEM — AI Product Interface Design
 
 ## 1. Why This Exists & Why It Works
-Many AI applications use standard chat interfaces that are hard to navigate. This document establishes guidelines for AI product interfaces. It works by setting clear rules for dynamic status displays, text input styling, and structured response layouts.
+Traditional AI product UIs often replicate the generic chat bubble layout popularized by standard chat platforms, reducing visual distinction. This system defines guidelines for creating bespoke, premium AI product interfaces. It uses monospaced metadata, structured layout grids, and interactive indicators to frame AI processes as high-fidelity computational actions.
 
 ---
 
-## 2. Interface Rules
-1. **Clear Loading States**: Provide responsive loading indicators during query execution (e.g. monospaced progress text or subtle layout fades rather than standard spinning circles).
-2. **Flexible Input Areas**: Design input containers that scale fluidly as user prompts grow in length.
-3. **Structured Response Layouts**: Format AI responses using clear, monospaced typography, clean code blocks, and structured summaries.
+## 2. Dynamic Input Specifications
+1. **Fluid Input Fields**: Text inputs must expand dynamically up to a defined ceiling (e.g. `240px`) as the prompt content grows, returning to a single row on submission.
+2. **Warning Thresholds**: Character count labels must render silently and only trigger visual alerts (using warning status colors) when prompt size approaches safety boundaries (e.g. exceeding 3200 characters of a 4000 limit).
 
 ---
 
-## 3. Designing AI Status Indicators
-* **Processing States**: Use small monospaced labels (e.g. `[STATUS_ANALYZING]`, `[COMPILING_REPLY]`) to show real-time processing status.
-* **Accuracy Cues**: Include confidence metrics or source links to build trust.
+## 3. Streaming and Processing Feedback
+* **Process Indicators**: Instead of generic looping spinner animations, processing phases must be expressed through monospaced status tags (e.g. `[COMPILING]`, `[THINKING]`) or animated dot wave routines.
+* **Typographic Stream**: Streaming text outputs must append a flashing focus cursor block at the trailing character node to visually indicate progress.
 
 ---
 
-## 4. When to Use & Avoid
-* **When to Use**: LLM chat systems, AI editor screens, search tools, and complex automation workflows.
-* **When to Avoid**: Standard informational homepages, simple marketing views, or contact forms.
-
-## Benchmark Traceability
+## 4. Benchmark Traceability
 
 ### Fantasy Interactive
 - [DIRECT] Fantasy Interactive → Tailwind CSS input classes → AI Product System → Style input fields dynamically for long prompt queries.

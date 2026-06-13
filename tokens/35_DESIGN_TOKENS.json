@@ -1,4 +1,17 @@
 {
+  "meta": {
+    "version": "3.0.0",
+    "system": "Creative OS",
+    "philosophy": "Obsidian-first. Single accent. Typography as structure. Space as premium.",
+    "benchmarks": [
+      "Bruno Simon: #1b1b1b world, warm ivory UI",
+      "Aristide Benoist: #171717, monospace confidence",
+      "Thomas Aufresne: #191919, zero color",
+      "RXK Studio: near-black, accent only on ghost echo",
+      "Sébastien Lempens: dark canvas, award-badge accent"
+    ]
+  },
+
   "colors": {
     "light": {
       "background": "hsl(30, 15%, 96%)",
@@ -15,6 +28,54 @@
       "border": "hsl(0, 0%, 20%)"
     }
   },
+
+  "color": {
+    "canvas": {
+      "obsidian": "hsl(220, 8%, 7%)",
+      "obsidian-warm": "hsl(30, 5%, 8%)",
+      "obsidian-cool": "hsl(230, 12%, 6%)",
+      "ivory": "hsl(40, 20%, 97%)",
+      "ivory-warm": "hsl(35, 25%, 95%)",
+      "ivory-cool": "hsl(220, 15%, 96%)"
+    },
+    "ink": {
+      "on-dark": {
+        "primary": "hsl(40, 20%, 96%)",
+        "secondary": "hsl(220, 5%, 65%)",
+        "muted": "hsl(220, 5%, 40%)",
+        "ghost": "hsl(220, 5%, 20%)"
+      },
+      "on-light": {
+        "primary": "hsl(220, 8%, 7%)",
+        "secondary": "hsl(220, 8%, 35%)",
+        "muted": "hsl(220, 5%, 60%)",
+        "ghost": "hsl(220, 5%, 82%)"
+      }
+    },
+    "accent": {
+      "note": "Single accent only. Never two competing accents. Pick one per project.",
+      "orange": "hsl(24, 90%, 55%)",
+      "electric": "hsl(195, 95%, 55%)",
+      "mint": "hsl(155, 70%, 50%)",
+      "bone": "hsl(38, 45%, 72%)",
+      "rose": "hsl(350, 60%, 58%)",
+      "void": "hsl(270, 60%, 55%)"
+    },
+    "surface": {
+      "raised": "hsl(220, 8%, 11%)",
+      "elevated": "hsl(220, 8%, 14%)",
+      "overlay": "hsl(220, 8%, 7%, 0.92)",
+      "border-subtle": "hsl(220, 8%, 16%)",
+      "border-strong": "hsl(220, 5%, 30%)"
+    },
+    "semantic": {
+      "success": "hsl(142, 65%, 48%)",
+      "warning": "hsl(40, 90%, 52%)",
+      "error": "hsl(4, 80%, 58%)",
+      "info": "hsl(210, 90%, 58%)"
+    }
+  },
+
   "typography": {
     "display": {
       "min_size": "2.5rem",
@@ -35,8 +96,62 @@
       "leading": 1.5,
       "tracking": "0.08em",
       "font_weight": 400
+    },
+    "family": {
+      "note": "Never use Google Fonts alone on creative projects. License or use variable fonts.",
+      "display-serif": "'Editorial New', 'Canela', 'Freight Display Pro', 'Tiempos Headline', Georgia, serif",
+      "display-sans": "'Neue Haas Grotesk', 'Aktiv Grotesk', 'GT Walsheim', 'PP Mori', system-ui, sans-serif",
+      "body": "'Inter Variable', 'DM Sans', system-ui, sans-serif",
+      "mono": "'JetBrains Mono Variable', 'IBM Plex Mono', 'Geist Mono', monospace",
+      "utility": "'Geist', 'Söhne', 'Helvetica Neue', sans-serif"
+    },
+    "scale": {
+      "note": "All display sizes use clamp(). Never px for display type.",
+      "display-hero": "clamp(5rem, 12vw, 11rem)",
+      "display-2xl": "clamp(4rem, 9vw, 8.5rem)",
+      "display-xl": "clamp(3rem, 6.5vw, 6rem)",
+      "display-lg": "clamp(2.5rem, 5vw, 4.5rem)",
+      "display-md": "clamp(2rem, 3.5vw, 3.25rem)",
+      "display-sm": "clamp(1.5rem, 2.5vw, 2.25rem)",
+      "body-xl": "clamp(1.25rem, 1.8vw, 1.6rem)",
+      "body-lg": "clamp(1.1rem, 1.4vw, 1.35rem)",
+      "body-md": "1rem",
+      "body-sm": "0.9rem",
+      "caption": "0.75rem",
+      "label": "0.6875rem",
+      "micro": "0.625rem"
+    },
+    "leading": {
+      "hero": "0.88",
+      "display": "0.94",
+      "tight": "1.08",
+      "snug": "1.25",
+      "normal": "1.55",
+      "relaxed": "1.7",
+      "loose": "1.85"
+    },
+    "tracking": {
+      "hero": "-0.05em",
+      "tighter": "-0.035em",
+      "tight": "-0.02em",
+      "normal": "0em",
+      "wide": "+0.05em",
+      "wider": "+0.1em",
+      "widest": "+0.18em",
+      "label": "+0.12em"
+    },
+    "weight": {
+      "thin": "100",
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700",
+      "extrabold": "800",
+      "black": "900"
     }
   },
+
   "spacing": {
     "margins": {
       "desktop": "8vw",
@@ -47,22 +162,148 @@
       "medium": "2rem",
       "large": "4rem",
       "huge": "8rem"
+    },
+    "base": "0.25rem",
+    "scale": {
+      "px": "1px",
+      "0.5": "0.125rem",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "8": "2rem",
+      "10": "2.5rem",
+      "12": "3rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem",
+      "32": "8rem",
+      "40": "10rem",
+      "48": "12rem",
+      "56": "14rem",
+      "64": "16rem"
+    },
+    "section": {
+      "xs": "clamp(3rem, 6vw, 5rem)",
+      "sm": "clamp(4rem, 9vw, 8rem)",
+      "md": "clamp(6rem, 12vw, 11rem)",
+      "lg": "clamp(8rem, 16vw, 16rem)",
+      "xl": "clamp(10rem, 22vw, 22rem)"
+    },
+    "container": {
+      "xs": "480px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1440px",
+      "3xl": "1920px",
+      "fluid": "min(90vw, 1440px)",
+      "gutter": "clamp(1.25rem, 5vw, 5rem)"
     }
   },
+
+  "layout": {
+    "grid_columns": 12,
+    "gap": "2rem"
+  },
+
+  "grid": {
+    "columns": { "mobile": 4, "tablet": 8, "desktop": 12 },
+    "gap": {
+      "mobile": "1rem",
+      "tablet": "1.5rem",
+      "desktop": "clamp(1.5rem, 2.5vw, 3rem)"
+    },
+    "named-areas": {
+      "note": "Use named grid areas for editorial layouts. Never anonymous column spans alone.",
+      "hero-left-dominant": "'hero hero hero hero hero hero hero hero _ _ _ _'",
+      "hero-right-dominant": "'_ _ _ _ hero hero hero hero hero hero hero hero'",
+      "editorial-offset": "'_ _ content content content content content content _ _ _ _'",
+      "full-bleed": "'content content content content content content content content content content content content'",
+      "portrait-right": "'copy copy copy copy copy _ image image image image image image'",
+      "portrait-left": "'image image image image image image _ copy copy copy copy copy'"
+    }
+  },
+
   "motion": {
     "easings": {
       "sovereign": "cubic-bezier(0.16, 1, 0.3, 1)",
       "hover": "cubic-bezier(0.25, 1, 0.5, 1)"
     },
     "duration": {
-      "instant": "100ms",
-      "micro": "200ms",
-      "standard": "600ms",
-      "cinematic": "1200ms"
+      "instant": "0ms",
+      "micro": "80ms",
+      "fast": "160ms",
+      "base": "320ms",
+      "slow": "560ms",
+      "slower": "900ms",
+      "cinematic": "1400ms",
+      "epic": "2200ms"
+    },
+    "ease": {
+      "sovereign": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "out": "cubic-bezier(0.0, 0.0, 0.2, 1)",
+      "in": "cubic-bezier(0.4, 0.0, 1, 1)",
+      "in-out": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+      "bounce": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "sharp": "cubic-bezier(0.4, 0.0, 0.6, 1)",
+      "expo-out": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "expo-in": "cubic-bezier(0.95, 0.05, 0.795, 0.035)"
+    },
+    "spring": {
+      "gentle": { "stiffness": 100, "damping": 15, "mass": 1 },
+      "default": { "stiffness": 240, "damping": 22, "mass": 1 },
+      "snappy": { "stiffness": 380, "damping": 28, "mass": 1 },
+      "elastic": { "stiffness": 280, "damping": 9, "mass": 1 },
+      "heavy": { "stiffness": 80, "damping": 18, "mass": 1.4 }
+    },
+    "lenis": {
+      "duration": 1.4,
+      "easing": "t => Math.min(1, 1.001 - Math.pow(2, -10 * t))",
+      "wheelMultiplier": 0.85,
+      "touchMultiplier": 1.8
     }
   },
-  "layout": {
-    "grid_columns": 12,
-    "gap": "2rem"
+
+  "border": {
+    "radius": {
+      "none": "0",
+      "xs": "2px",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "16px",
+      "xl": "24px",
+      "pill": "9999px"
+    },
+    "width": {
+      "hairline": "0.5px",
+      "thin": "1px",
+      "medium": "1.5px",
+      "thick": "2px"
+    }
+  },
+
+  "breakpoints": {
+    "xs": "375px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1440px",
+    "3xl": "1920px"
+  },
+
+  "zindex": {
+    "base": 0,
+    "raised": 10,
+    "dropdown": 100,
+    "sticky": 200,
+    "overlay": 500,
+    "modal": 800,
+    "cursor": 900,
+    "transition": 9999
   }
 }

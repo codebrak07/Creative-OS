@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-canvas);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.domContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}

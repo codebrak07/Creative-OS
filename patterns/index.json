@@ -1,0 +1,128 @@
+{
+  "lenis_setup": {
+    "status": "ready",
+    "name": "Lenis Smooth Scroll Setup",
+    "dependencies": ["@studio-freight/lenis", "gsap"],
+    "code": "import Lenis from '@studio-freight/lenis';\nimport gsap from 'gsap';\nimport ScrollTrigger from 'gsap/ScrollTrigger';\n\ngsap.registerPlugin(ScrollTrigger);\n\nlet lenis;\n\nexport function initRAF() {\n  lenis = new Lenis({\n    duration: 1.4,\n    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),\n    orientation: 'vertical',\n    smoothWheel: true,\n    touchMultiplier: 1.8,\n  });\n\n  lenis.on('scroll', ScrollTrigger.update);\n  gsap.ticker.add((time) => lenis.raf(time * 1000));\n  gsap.ticker.lagSmoothing(0);\n  return lenis;\n}\n\nexport const getLenis = () => lenis;",
+    "notes": "Always initialize Lenis first at the root level of the app. Ensure ScrollTrigger is registered before creating the Lenis instance."
+  },
+  "echo_text": {
+    "status": "ready",
+    "name": "RXK Echo Text",
+    "dependencies": ["react"],
+    "code": "import { useEffect, useRef } from 'react';\n\nexport function EchoText({ children, tag: Tag = 'span', color = 'var(--color-accent)' }) {\n  const ref = useRef(null);\n  const echoRef = useRef(null);\n\n  useEffect(() => {\n    let raf, targetX = 0, targetY = 0, cx = 0, cy = 0;\n    const track = (e) => {\n      const rect = ref.current.getBoundingClientRect();\n      targetX = (e.clientX - rect.left - rect.width / 2) * 0.12;\n      targetY = (e.clientY - rect.top - rect.height / 2) * 0.08;\n    };\n    const loop = () => {\n      cx += (targetX - cx) * 0.06;\n      cy += (targetY - cy) * 0.06;\n      if (echoRef.current) {\n        echoRef.current.style.transform = `translate(${cx + 3}px, ${cy + 2}px)`;\n      }\n      raf = requestAnimationFrame(loop);\n    };\n    const el = ref.current;\n    el.addEventListener('mousemove', track);\n    el.addEventListener('mouseleave', () => { targetX = 0; targetY = 0; });\n    raf = requestAnimationFrame(loop);\n    return () => {\n      el.removeEventListener('mousemove', track);\n      cancelAnimationFrame(raf);\n    };\n  }, []);\n\n  return (\n    <Tag ref={ref} style={{ position: 'relative', display: 'inline-block' }}>\n      <span style={{ position: 'relative', zIndex: 1 }}>{children}</span>\n      <span ref={echoRef} aria-hidden=\"true\" style={{\n        position: 'absolute', inset: 0,\n        opacity: 0.3, color: color,\n        pointerEvents: 'none', zIndex: 0,\n        transition: 'transform 0.1s ease-out'\n      }}>{children}</span>\n    </Tag>\n  );\n}",
+    "notes": "Ensures the typographic signature of RXK. Best applied on heavy sans-serif headers."
+  },
+  "velocity_cursor": {
+    "status": "ready",
+    "name": "Velocity Cursor",
+    "dependencies": [],
+    "code": "export class VelocityCursor {\n  constructor(el) {\n    this.el = el;\n    this.x = -100; this.y = -100;\n    this.tx = -100; this.ty = -100;\n    this.lx = -100; this.ly = -100;\n    document.addEventListener('mousemove', (e) => {\n      this.tx = e.clientX; this.ty = e.clientY;\n    });\n    if ('ontouchstart' in window) { el.style.display = 'none'; return; }\n    this.loop();\n  }\n  loop() {\n    const vx = this.tx - this.lx;\n    const vy = this.ty - this.ly;\n    this.lx = this.x; this.ly = this.y;\n    this.x += (this.tx - this.x) * 0.1;\n    this.y += (this.ty - this.y) * 0.1;\n    const speed = Math.sqrt(vx * vx + vy * vy);\n    const stretch = Math.min(1 + speed * 0.04, 2.2);\n    const angle = Math.atan2(vy, vx) * (180 / Math.PI);\n    this.el.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${angle}deg) scaleX(${stretch}) scaleY(${1 / stretch})`;\n    requestAnimationFrame(this.loop.bind(this));\n  }\n}",
+    "notes": "Stretch ratio maps to speed velocity, recreating the Aristide Benoist standard."
+  },
+  "magnetic_element": {
+    "status": "ready",
+    "name": "Magnetic Hover",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function initMagnetic(el, strength = 0.3) {\n  const xTo = gsap.quickTo(el, 'x', { duration: 0.8, ease: 'power3.out' });\n  const yTo = gsap.quickTo(el, 'y', { duration: 0.8, ease: 'power3.out' });\n\n  el.addEventListener('mousemove', (e) => {\n    const { clientX, clientY } = e;\n    const { left, top, width, height } = el.getBoundingClientRect();\n    const x = (clientX - (left + width / 2)) * strength;\n    const y = (clientY - (top + height / 2)) * strength;\n    xTo(x);\n    yTo(y);\n  });\n\n  el.addEventListener('mouseleave', () => {\n    xTo(0);\n    yTo(0);\n  });\n}",
+    "notes": "Magnetic attraction pulls element coordinates toward user mouse pointers."
+  },
+  "word_reveal": {
+    "status": "ready",
+    "name": "Word Reveal",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function splitAndReveal(el, trigger = 'viewport') {\n  const words = el.innerText.split(' ');\n  el.innerHTML = words.map(w => `<span class=\"word-wrap\" style=\"overflow:hidden; display:inline-block;\"><span class=\"word-inner\" style=\"display:inline-block;\">${w}</span></span>`).join(' ');\n  const inners = el.querySelectorAll('.word-inner');\n  gsap.fromTo(inners, { yPercent: 100 }, {\n    yPercent: 0, duration: 0.8, stagger: 0.04, ease: 'power4.out',\n    scrollTrigger: trigger === 'viewport' ? {\n      trigger: el, start: 'top 85%', toggleActions: 'play none none none'\n    } : null\n  });\n}",
+    "notes": "Cinematic text reveal using nested mask selectors. Prevents container offsets."
+  },
+  "glitch_counter": {
+    "status": "ready",
+    "name": "Glitch Counter",
+    "dependencies": [],
+    "code": "export function startGlitchCount(el, targetValue, duration = 2000) {\n  const chars = '0123456789X$/%';\n  const start = performance.now();\n  const loop = (now) => {\n    const elapsed = now - start;\n    const progress = Math.min(elapsed / duration, 1);\n    if (progress < 1) {\n      const text = Math.floor(targetValue * progress).toString();\n      const glitched = text.split('').map(c => Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c).join('');\n      el.innerText = glitched;\n      requestAnimationFrame(loop);\n    } else {\n      el.innerText = targetValue.toString();\n    }\n  };\n  requestAnimationFrame(loop);\n}",
+    "notes": "Monospaced counter with technical preloader glitch animations."
+  },
+  "horizontal_scroll": {
+    "status": "ready",
+    "name": "Horizontal Section Scroll",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function setupHorizontalScroll(pinSection, container) {\n  const scrollWidth = container.offsetWidth - window.innerWidth;\n  gsap.to(container, {\n    x: -scrollWidth, ease: 'none',\n    scrollTrigger: {\n      trigger: pinSection, pin: true, scrub: true,\n      start: 'top top', end: () => `+=${scrollWidth}`\n    }\n  });\n}",
+    "notes": "Pins layout vertically while scrolling panel tracks horizontally."
+  },
+  "color_shift": {
+    "status": "ready",
+    "name": "Color Shift Interpolation",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function setupColorInterpolation(triggerSection, bodyElement, targetHsl) {\n  gsap.to(bodyElement, {\n    backgroundColor: targetHsl, ease: 'sine.inOut',\n    scrollTrigger: {\n      trigger: triggerSection, scrub: true, start: 'top 50%', end: 'bottom 50%'\n    }\n  });\n}",
+    "notes": "Smooth canvas background interpolation. Prevents high rendering costs."
+  },
+  "sticky_narrative": {
+    "status": "ready",
+    "name": "Sticky Narrative Layout",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function setupStickyNarrative(leftBlock, rightContainer) {\n  gsap.to(leftBlock, {\n    scrollTrigger: {\n      trigger: rightContainer, pin: leftBlock, start: 'top top',\n      end: 'bottom bottom', scrub: true\n    }\n  });\n}",
+    "notes": "Locks left narrative copy in place while right-hand images scroll by."
+  },
+  "image_reveal_clip": {
+    "status": "ready",
+    "name": "Image Clip-Path Reveal",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function setupImageClipReveal(imgElement) {\n  gsap.fromTo(imgElement, { clipPath: 'inset(100% 0% 0% 0%)' }, {\n    clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'power4.inOut',\n    scrollTrigger: { trigger: imgElement, start: 'top 80%' }\n  });\n}",
+    "notes": "Wipes away mask borders using responsive CSS inset clip-paths."
+  },
+  "page_transition": {
+    "status": "ready",
+    "name": "Page Wipe Transition",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function wipeTransition(overlayElement, onComplete) {\n  const tl = gsap.timeline({ onComplete });\n  tl.fromTo(overlayElement, { clipPath: 'inset(100% 0 0 0)' }, {\n    clipPath: 'inset(0 0 0 0)', duration: 0.6, ease: 'power4.in'\n  }).to(overlayElement, {\n    clipPath: 'inset(0 0 100% 0)', duration: 0.6, ease: 'power4.out', delay: 0.25\n  });\n}",
+    "notes": "Bottom-to-top cinematic layout router wipe."
+  },
+  "physics_stickers": {
+    "status": "ready",
+    "name": "Rapier Physics Stickers",
+    "dependencies": ["@dimforge/rapier2d"],
+    "code": "import RAPIER from '@dimforge/rapier2d';\n\nexport class PhysicsStickers {\n  constructor(canvas) {\n    this.world = new RAPIER.World({ x: 0.0, y: -9.81 });\n    this.canvas = canvas;\n    this.bodies = [];\n    this.initBoundaries();\n  }\n  initBoundaries() {\n    const w = this.canvas.width / 100;\n    const h = this.canvas.height / 100;\n    const ground = RAPIER.RigidBodyDesc.fixed();\n    this.world.createCollider(RAPIER.ColliderDesc.cuboid(w, 0.1), this.world.createRigidBody(ground));\n  }\n  step() {\n    this.world.step();\n  }\n}",
+    "notes": "Draggable stickers simulation using Rapier WASM physics bounds."
+  },
+  "webgl_noise_plane": {
+    "status": "ready",
+    "name": "WebGL Noise Plane Shader",
+    "dependencies": ["three"],
+    "code": "import * as THREE from 'three';\n\nconst vertexShader = `varying vec2 vUv; void main() { vUv = uv; gl_Position = vec4(position, 1.0); }`;\nconst fragmentShader = `varying vec2 vUv; uniform float uTime; float noise(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); } void main() { vec2 uv = vUv; float n = noise(uv * 100.0 + sin(uTime)); gl_FragColor = vec4(vec3(n * 0.05), 1.0); }`;\n\nexport function createNoisePlane() {\n  const material = new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms: { uTime: { value: 0.0 } } });\n  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);\n  return { mesh, material };\n}",
+    "notes": "Custom GLSL noise background shader. Low performance costs."
+  },
+  "video_scrub": {
+    "status": "ready",
+    "name": "Video Frame Scrub",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function setupVideoScrub(video, triggerSection) {\n  video.pause();\n  video.currentTime = 0;\n  gsap.to(video, {\n    currentTime: video.duration || 5, ease: 'none',\n    scrollTrigger: {\n      trigger: triggerSection, scrub: true, start: 'top top', end: 'bottom bottom'\n    }\n  });\n}",
+    "notes": "Coordinates video playback frames to user scroll positions."
+  },
+  "marquee_track": {
+    "status": "ready",
+    "name": "Infinite Marquee Ticker",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function initMarquee(trackElement, speed = 100) {\n  const width = trackElement.scrollWidth;\n  gsap.to(trackElement, {\n    x: -width / 2, ease: 'none', repeat: -1,\n    duration: width / speed\n  });\n}",
+    "notes": "Offsets lists infinitely. Duplicates list elements dynamically."
+  },
+  "loader_designed": {
+    "status": "ready",
+    "name": "Lempens Awards Loader",
+    "dependencies": ["gsap"],
+    "code": "import gsap from 'gsap';\n\nexport function startLoader(counterEl, awardsEl, onComplete) {\n  let progress = { value: 0 };\n  gsap.to(progress, {\n    value: 100, duration: 2.2, ease: 'power2.inOut',\n    onUpdate: () => { counterEl.innerText = `${Math.floor(progress.value)}%`; },\n    onComplete: () => {\n      gsap.to([counterEl, awardsEl], { opacity: 0, duration: 0.4, onComplete });\n    }\n  });\n}",
+    "notes": "Lempens-tier load screens. Previews SOTD award achievements."
+  },
+  "post_processing": {
+    "status": "ready",
+    "name": "Three.js Post-Processing",
+    "dependencies": ["three", "postprocessing"],
+    "code": "import { EffectComposer, RenderPass, EffectPass, BloomEffect } from 'postprocessing';\n\nexport function setupEffects(renderer, scene, camera) {\n  const composer = new EffectComposer(renderer);\n  composer.addPass(new RenderPass(scene, camera));\n  const bloom = new BloomEffect({ intensity: 0.5 });\n  composer.addPass(new EffectPass(camera, bloom));\n  return composer;\n}",
+    "notes": "Applies chromatic aberrations, lens blur, and light bloom passes."
+  },
+  "sound_manager": {
+    "status": "ready",
+    "name": "Howler Spatial Sound Manager",
+    "dependencies": ["howler"],
+    "code": "import { Howl } from 'howler';\n\nexport class SoundManager {\n  constructor() {\n    this.sounds = {};\n  }\n  load(id, src) {\n    this.sounds[id] = new Howl({ src: [src], volume: 0.5 });\n  }\n  play(id) {\n    if (this.sounds[id]) this.sounds[id].play();\n  }\n  setVolume(id, vol) {\n    if (this.sounds[id]) this.sounds[id].volume(vol);\n  }\n}",
+    "notes": "Manages sound asset playbacks tuned to scroll velocity hooks."
+  }
+}

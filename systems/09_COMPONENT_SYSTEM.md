@@ -1,61 +1,47 @@
-# 09_COMPONENT_SYSTEM — Reusable Component Architectures
+# 09_COMPONENT_SYSTEM — Core Creative OS Components
 
 ## 1. Why This Exists & Why It Works
-Traditional component libraries often bundle extra styling and scripts, resulting in large, slow codebases. This document establishes guidelines for creating lightweight, semantic, and accessible UI components. It works by restricting component scope and prioritizing clean, native HTML structures.
+Traditional component libraries often bundle extraneous stylesheets, leading to bloated, non-semantic DOM trees and slow performance. This component system, built to SOTD standards, enforces strict isolation of logic and styling. It utilizes CSS custom properties (tokens) to align layouts with the design system, ensuring a high-end, bespoke aesthetic that mimics award-winning French agencies.
 
 ---
 
 ## 2. Core Component Rules
-1. **Zero Styling Overrides**: Do not place custom style overrides inside individual component files. All styling variables must map directly to the design tokens.
-2. **Accessible by Default**: All components must support keyboard navigation and use semantic HTML tags.
-3. **Focused State Hooks**: Separate component rendering logic from state changes to keep code clean and testable.
+1. **Zero Hardcoded Design Tokens**: All color, sizing, spacing, and transition constants must refer to standard CSS variables defined in the token system (e.g. `var(--color-canvas)`).
+2. **Keyboard Accessible by Default**: Interactive elements must feature clear `:focus-visible` styling (minimum `1.5px` offset outline) and support standard keyboard accessibility patterns.
+3. **Sound Triggers Integrated**: Buttons and menu overlays should integrate sound triggers (e.g. calling `window.__cos?.sound?.play('click')` if available) to provide tangible spatial feedback.
+4. **Touch & Motion Fallbacks**: Micro-interactions (like magnetic mouse offset) must automatically check for touch support (`'ontouchstart' in window`) and reduce animation overhead on lower-end hardware.
 
 ---
 
-## 3. Accessibility Standards
-* **Aria Attributes**: Include `aria-expanded`, `aria-label`, and `role` properties on all interactive components.
-* **Keyboard Navigation**: Ensure tabs, overlays, and modals can be navigated and closed using the `Tab` and `Escape` keys.
+## 3. Core Component Specifications
+
+### 1. COS Button
+A magnetic, token-integrated call to action. 
+- Magnetic cursor pull calculated via GSAP on mouse moves.
+- Multi-variant styling: Primary (filled), Ghost (bordered), and Text (underlined).
+- Integrates sound triggers for spatial feel.
+
+### 2. Navigation Overlay (Lempens/Benoist Pattern)
+A full-screen, motion-rich menu layer.
+- Triggered by a custom hamburger icon morph.
+- Clip-path transition sweep on open/close using GSAP `power4.inOut`.
+- Escape key listener locks scroll and closes navigation overlays gracefully.
+
+### 3. Loader (Lempens-Tier)
+A designed wait sequence that sets the site's initial atmosphere.
+- Features awards display row.
+- tabular-nums monospaced progress counter counting from `000` to `100`.
+- Experience hints instructing users to enable sound.
+
+### 4. Hero Layout (Asymmetric)
+A bold editorial landing viewport.
+- Split screen visual weighting.
+- Left content: display headline with staggered vertical reveal.
+- Right content: landscape/portrait asset with clip-path sweep animation on mount.
 
 ---
 
-## 4. Engineering & React Component Example
-
-### Semantic Accordion Component (React & Tailwind)
-```jsx
-// React Component for clean, semantic accordions
-import React, { useState } from 'react';
-
-export function PremiumAccordion({ title, children }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border-b border-neutral-800 py-4 w-full">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-        className="w-full flex justify-between items-center text-left py-2 text-lg text-neutral-100 hover:text-neutral-300 transition-colors duration-300 focus:outline-none"
-      >
-        <span>{title}</span>
-        <span className="font-mono text-xs text-neutral-500">[ {isOpen ? '-' : '+'} ]</span>
-      </button>
-      
-      {isOpen && (
-        <div className="pt-2 pb-4 text-neutral-400 font-light text-base leading-relaxed">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-}
-```
-
----
-
-## 5. When to Use & Avoid
-* **When to Use**: Navigation links, text highlights, visual details, and metadata cards.
-* **When to Avoid**: Dynamic custom tables, canvas integrations, or WebGL contexts.
-
-## Benchmark Traceability
+## 4. Benchmark Traceability
 
 ### Fantasy Interactive
 - [DIRECT] Fantasy Interactive → Tailwind CSS grids → Component System → Define component templates using responsive CSS variables.

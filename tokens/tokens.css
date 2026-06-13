@@ -1,0 +1,243 @@
+/* ============================================================
+   Creative OS: Design Tokens v3.0
+   Auto-generated from 35_DESIGN_TOKENS.json
+   DO NOT EDIT: modify the JSON source and regenerate
+   ============================================================ */
+
+/* -- DARK THEME (default: obsidian-first) ------------------ */
+:root,
+[data-theme="dark"] {
+  /* CANVAS */
+  --color-canvas:           hsl(220, 8%, 7%);
+  --color-canvas-warm:      hsl(30, 5%, 8%);
+  --color-canvas-cool:      hsl(230, 12%, 6%);
+
+  /* INK */
+  --color-ink:              hsl(40, 20%, 96%);
+  --color-ink-secondary:    hsl(220, 5%, 65%);
+  --color-ink-muted:        hsl(220, 5%, 40%);
+  --color-ink-ghost:        hsl(220, 5%, 20%);
+
+  /* ACCENT: override per project with one of these */
+  --color-accent:           hsl(24, 90%, 55%);
+  --color-accent-subtle:    hsl(24, 90%, 55%, 0.1);
+  --color-accent-hover:     hsl(24, 90%, 48%);
+
+  /* SURFACE */
+  --color-surface:          hsl(220, 8%, 11%);
+  --color-surface-elevated: hsl(220, 8%, 14%);
+  --color-overlay:          hsl(220, 8%, 7%, 0.92);
+  --color-border:           hsl(220, 8%, 16%);
+  --color-border-strong:    hsl(220, 5%, 30%);
+}
+
+/* -- LIGHT THEME -------------------------------------------- */
+[data-theme="light"] {
+  --color-canvas:           hsl(40, 20%, 97%);
+  --color-canvas-warm:      hsl(35, 25%, 95%);
+  --color-canvas-cool:      hsl(220, 15%, 96%);
+
+  --color-ink:              hsl(220, 8%, 7%);
+  --color-ink-secondary:    hsl(220, 8%, 35%);
+  --color-ink-muted:        hsl(220, 5%, 60%);
+  --color-ink-ghost:        hsl(220, 5%, 82%);
+
+  --color-surface:          hsl(0, 0%, 100%);
+  --color-surface-elevated: hsl(220, 10%, 98%);
+  --color-overlay:          hsl(40, 20%, 97%, 0.92);
+  --color-border:           hsl(220, 8%, 88%);
+  --color-border-strong:    hsl(220, 8%, 72%);
+}
+
+/* -- TYPOGRAPHY --------------------------------------------- */
+:root {
+  --font-display-serif:  'Editorial New', 'Canela', 'Tiempos Headline', Georgia, serif;
+  --font-display-sans:   'Neue Haas Grotesk', 'GT Walsheim', 'PP Mori', system-ui, sans-serif;
+  --font-body:           'Inter Variable', 'DM Sans', system-ui, sans-serif;
+  --font-mono:           'JetBrains Mono Variable', 'IBM Plex Mono', monospace;
+  --font-utility:        'Geist', 'Söhne', 'Helvetica Neue', sans-serif;
+
+  /* SCALE */
+  --text-hero:        clamp(5rem, 12vw, 11rem);
+  --text-2xl:         clamp(4rem, 9vw, 8.5rem);
+  --text-xl:          clamp(3rem, 6.5vw, 6rem);
+  --text-lg:          clamp(2.5rem, 5vw, 4.5rem);
+  --text-md:          clamp(2rem, 3.5vw, 3.25rem);
+  --text-sm:          clamp(1.5rem, 2.5vw, 2.25rem);
+  --text-body-xl:     clamp(1.25rem, 1.8vw, 1.6rem);
+  --text-body-lg:     clamp(1.1rem, 1.4vw, 1.35rem);
+  --text-body:        1rem;
+  --text-body-sm:     0.9rem;
+  --text-caption:     0.75rem;
+  --text-label:       0.6875rem;
+  --text-micro:       0.625rem;
+
+  /* LEADING */
+  --leading-hero:     0.88;
+  --leading-display:  0.94;
+  --leading-tight:    1.08;
+  --leading-snug:     1.25;
+  --leading-normal:   1.55;
+  --leading-relaxed:  1.7;
+
+  /* TRACKING */
+  --tracking-hero:    -0.05em;
+  --tracking-tighter: -0.035em;
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-label:   0.12em;
+
+  /* -- SPACING ---------------------------------------------- */
+  --space-section-xs: clamp(3rem, 6vw, 5rem);
+  --space-section-sm: clamp(4rem, 9vw, 8rem);
+  --space-section-md: clamp(6rem, 12vw, 11rem);
+  --space-section-lg: clamp(8rem, 16vw, 16rem);
+  --space-section-xl: clamp(10rem, 22vw, 22rem);
+  --space-gutter:     clamp(1.25rem, 5vw, 5rem);
+  --container:        min(90vw, 1440px);
+
+  /* -- MOTION ----------------------------------------------- */
+  --dur-micro:       80ms;
+  --dur-fast:        160ms;
+  --dur-base:        320ms;
+  --dur-slow:        560ms;
+  --dur-slower:      900ms;
+  --dur-cinematic:   1400ms;
+
+  --ease-sovereign:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:        cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in:         cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-in-out:     cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-bounce:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-expo-out:   cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* -- BORDER ----------------------------------------------- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 9999px;
+
+  /* -- Z-INDEX ---------------------------------------------- */
+  --z-raised:     10;
+  --z-dropdown:   100;
+  --z-sticky:     200;
+  --z-overlay:    500;
+  --z-modal:      800;
+  --z-cursor:     900;
+  --z-transition: 9999;
+}
+
+/* -- BASE RESETS (opinionated, COS standard) --------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.1vw, 17px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection: brand accent */
+::selection {
+  background: var(--color-accent);
+  color: hsl(220, 8%, 7%);
+}
+
+/* Focus: never remove, style intentionally */
+:focus-visible {
+  outline: 1.5px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* -- TYPOGRAPHY UTILITY CLASSES ---------------------------- */
+.t-hero {
+  font-size: var(--text-hero);
+  line-height: var(--leading-hero);
+  letter-spacing: var(--tracking-hero);
+}
+
+.t-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-tighter);
+}
+
+.t-xl {
+  font-size: var(--text-xl);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-tight);
+}
+
+.t-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+}
+
+.t-label {
+  font-size: var(--text-label);
+  line-height: 1;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  font-family: var(--font-utility);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* -- LAYOUT UTILITIES -------------------------------------- */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+@media (max-width: 768px) {
+  .grid-12 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* -- ANIMATION KEYFRAMES ----------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

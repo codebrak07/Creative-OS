@@ -1,0 +1,89 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-canvas);
+  border-top: 1px solid var(--color-border);
+}
+
+.link {
+  display: block;
+  position: relative;
+  padding-block: clamp(8rem, 15vh, 12rem);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-cinematic) var(--ease-sovereign);
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-canvas);
+  opacity: 0.92;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding-inline: var(--space-gutter);
+}
+
+.label {
+  color: var(--color-ink-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.title {
+  font-family: var(--font-display-serif);
+  color: var(--color-ink);
+  transition: transform var(--dur-slow) var(--ease-sovereign);
+}
+
+.arrow {
+  font-size: var(--text-sm);
+  color: var(--color-ink-secondary);
+  transform: translateY(0);
+  transition:
+    transform var(--dur-base) var(--ease-sovereign),
+    color var(--dur-fast) var(--ease-out);
+}
+
+/* Hover effects */
+.link:hover .bgImage {
+  transform: scale(1);
+}
+
+.link:hover .overlay {
+  opacity: 0.75;
+}
+
+.link:hover .label {
+  color: var(--color-ink);
+}
+
+.link:hover .title {
+  transform: translateY(-8px);
+}
+
+.link:hover .arrow {
+  transform: translateY(4px) scale(1.1);
+  color: var(--color-accent);
+}

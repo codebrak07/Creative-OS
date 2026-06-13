@@ -1,0 +1,25 @@
+{
+  "name": "@creative-os/mcp",
+  "version": "3.0.0",
+  "description": "Creative OS MCP server — French SOTD-winner intelligence for any AI IDE",
+  "type": "module",
+  "bin": {
+    "creative-os-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "audit": "node dist/scripts/qa-audit.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.24",
+    "tsx": "4.7.1",
+    "typescript": "5.3.3"
+  },
+  "keywords": ["mcp", "creative-os", "awwwards", "three.js", "gsap", "design-system"],
+  "engines": { "node": ">=18.0.0" }
+}

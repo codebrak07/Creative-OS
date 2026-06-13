@@ -1,28 +1,24 @@
 # 31_LUXURY_BRAND_SYSTEM — Luxury Visual Architectures
 
 ## 1. Why This Exists & Why It Works
-Luxury brands require visual restraint, large imagery, and clear typography to build prestige. This document establishes guidelines for luxury web layouts. It works by setting strict rules for whitespace allocation, high-fashion image ratios, and minimalist branding details.
+Luxury brands require visual restraint, large imagery, and clear typography to build prestige. Rather than using conventional high-contrast, attention-grabbing templates, luxury layouts rely on negative space, quiet pacing, and high aspect ratios to signal premium value. This system enforces strict visual rules that align with high-end editorial and watch-brand designs.
 
 ---
 
-## 2. Luxury Spacing & Visual Rhythm
-1. **Spacious Margins**: Use wide margins (`8vw` to `12vw` on desktop) to isolate text and image containers, signaling prestige.
-2. **Dynamic Pacing**: Alternate between large, full-bleed media showcases and quiet, text-focused editorial blocks.
-3. **High-End Image Ratios**: Restrict product and brand photography to vertical `2:3` or `4:5` aspect ratios, mimicking print magazines.
+## 2. Spacing & Rhythm Specifications
+1. **Premium Margins**: Desktop layouts must allocate significant outer spacing (`15vw` margins or wider on the hero viewport) to isolate content and communicate importance.
+2. **Strict Ratios**: Imagery must follow portrait vertical configurations (such as `2:3` or `4:5` aspect ratios).
+3. **Restraint Above Fold**: No call-to-action (CTA) buttons or promotional lists should be placed above the fold. The layout forces user exploration and scrolling rather than offering instant conversion gateways.
 
 ---
 
-## 3. Brand Identity Rules
-* **Restrained Typography**: Limit headers to single serif typefaces. Use monospace fonts for numbers, labels, and secondary tags.
-* **No Call-to-Action Overload**: Do not use primary buttons in the hero section. Place links quietly inside the story flow.
+## 3. Brand Identity & CSS Rules
+* **Restrained Typography**: Headers must be restricted to a single light serif font (e.g. `font-weight: 300` or `100`), while utility information uses small monospaced labels.
+* **No Cards or Box Shadows**: All product cards, elevated container cards, and box shadows are forbidden. Content is separated solely by spacing and hairline borders.
 
 ---
 
-## 4. When to Use & Avoid
-* **When to Use**: High-fashion marketing, premium product launches, and boutique creative showcases.
-* **When to Avoid**: Bulk retail shopping carts, database searches, or technical SaaS tool views.
-
-## Benchmark Traceability
+## 4. Benchmark Traceability
 
 ### Buttermax
 - [INFERRED] Buttermax → Suisse Intl spacing styles → Luxury Brand System → Set wide vertical paddings (`8vw` to `12vw`).

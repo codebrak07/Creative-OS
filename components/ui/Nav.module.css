@@ -1,0 +1,102 @@
+.trigger {
+  position: fixed;
+  top: var(--space-gutter);
+  right: var(--space-gutter);
+  z-index: var(--z-sticky);
+  background: none;
+  border: none;
+  cursor: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.bar {
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--color-ink);
+  transition: transform var(--dur-base) var(--ease-sovereign);
+  transform-origin: center;
+}
+.barOpen:first-child { transform: rotate(45deg) translateY(3.3px); }
+.barOpen:last-child  { transform: rotate(-45deg) translateY(-3.3px); }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: var(--color-canvas);
+  display: flex;
+  align-items: center;
+  padding: var(--space-gutter);
+  clip-path: inset(0 0 100% 0);
+}
+
+.navInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-block: clamp(4rem, 8vh, 8rem);
+}
+
+.linkList { list-style: none; }
+
+.linkItem { overflow: hidden; }
+
+.link {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  padding-block: 0.5rem;
+}
+
+.linkIndex {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  letter-spacing: var(--tracking-wider);
+  min-width: 2.5rem;
+}
+
+.linkLabel {
+  font-family: var(--font-display-sans);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.link:hover .linkLabel { color: var(--color-accent); }
+.link:focus-visible .linkLabel { color: var(--color-accent); }
+.link:focus-visible { outline: 1px solid var(--color-accent); }
+
+.navFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+
+.footerLink {
+  font-family: var(--font-utility);
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  letter-spacing: var(--tracking-wide);
+}
+.footerLink:hover { color: var(--color-ink); }
+.footerLink:focus-visible { color: var(--color-ink); outline: 1px solid var(--color-ink); }
+
+.footerMeta {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  letter-spacing: var(--tracking-wider);
+}

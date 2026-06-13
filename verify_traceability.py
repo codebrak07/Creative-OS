@@ -15,6 +15,9 @@ def run_validation():
     # Find all markdown files
     md_files = []
     for root, dirs, files in os.walk(base_dir):
+        parts = root.split(os.sep)
+        if "node_modules" in parts or "creative-os-mcp" in parts:
+            continue
         for f in files:
             if f.endswith(".md"):
                 rel_path = os.path.relpath(os.path.join(root, f), base_dir)

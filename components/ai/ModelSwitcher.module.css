@@ -1,0 +1,107 @@
+.wrap {
+  position: relative;
+  display: inline-block;
+  z-index: var(--z-dropdown);
+  padding: 0.5rem clamp(1.5rem, 4vw, 3rem);
+}
+
+.switcherBtn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.switcherBtn:hover {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-surface-elevated);
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.currentName {
+  font-family: var(--font-utility);
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.arrow {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-ink-muted);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: clamp(1.5rem, 4vw, 3rem);
+  margin-top: 0.25rem;
+  width: 16rem;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  list-style: none;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.item {
+  padding: 0.85rem 1.2rem;
+  cursor: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background-color: var(--color-surface);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemName {
+  font-family: var(--font-utility);
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.check {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: var(--text-body-sm);
+}
+
+.itemDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  line-height: var(--leading-snug);
+}
+
+.activeItem {
+  background-color: var(--color-surface);
+}

@@ -623,6 +623,41 @@ Conduct a pre-release review using the scorecard in [21_AWWWARDS_EVALUATION_SYST
 * **Aria Attributes**: Include `aria-expanded`, `aria-label`, and `role` properties on all interactive components.
 * **Keyboard Navigation**: Ensure modals and fullscreen navigation panels can be closed using the Escape key.
 
+## MCP Server Integration
+
+Creative OS is wrapped in a Model Context Protocol (MCP) server, allowing you to access all guidelines, tokens, pattern libraries, and automated checkers directly in your AI IDE (such as Claude Code, Cursor, or Windsurf).
+
+### Quick Start
+1. Navigate to `/creative-os/creative-os-mcp/`
+2. Install dependencies and compile:
+   ```bash
+   npm install
+   npm run build
+   ```
+3. Connect the MCP server in your IDE configuration by adding the following server config:
+   - **Command:** `node`
+   - **Args:** `["/absolute/path/to/creative-os/creative-os-mcp/dist/index.js"]`
+
+### Available Tools
+1. `cos_activate`: Activate senior creative technologist mode.
+2. `cos_project_init`: Initialize project context variables inside memory.
+3. `cos_tokens`: Retrieve design tokens by category (`color`, `typography`, etc.).
+4. `cos_pattern`: Retrieve production-ready animation and interaction code.
+5. `cos_benchmark`: View JSON profiles of SOTD-winning studios.
+6. `cos_benchmark_compare`: Compare design stack/principles between two studios.
+7. `cos_concept`: Pressure-test project briefs.
+8. `cos_signature`: Generate signature interactions for briefs.
+9. `cos_stack`: Retrieve the recommended creative tech stack and rationale.
+10. `cos_audit`: Audits code snippets for px sizes, hex colors, and accessibility.
+11. `cos_fix`: Automatically patches code violations.
+12. `cos_score`: Grades a project brief against Awwwards criteria.
+13. `cos_launch_check`: Analyzes repository structure for preloads and accessibility.
+14. `cos_case_study`: Generates structured FWA/Awwwards case studies.
+15. `cos_awwwards`: Returns Awwwards evaluation guidelines.
+16. `cos_recommend_modules`: Orchestrates Creative OS manuals based on project type and goals.
+17. `cos_router`: Recommends specific Creative OS modules and benchmarks based on project and goal briefs.
+18. `cos_decide`: Creative Decision Engine for architectural and design queries.
+
 ## Contributing
 
 To modify the Creative OS framework files while preserving system integrity:

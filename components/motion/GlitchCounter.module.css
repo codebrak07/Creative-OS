@@ -1,0 +1,27 @@
+.counter {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  letter-spacing: var(--tracking-normal);
+}
+
+.glitch {
+  color: var(--color-accent);
+  font-size: 0.8em;
+  margin-left: 2px;
+  opacity: 0.8;
+  display: inline-block;
+  animation: pulse var(--dur-fast) infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: skewX(-5deg); }
+  to { transform: skewX(5deg); }
+}
+
+/* Mobile fallback: disable skew anim */
+@media (prefers-reduced-motion: reduce) {
+  .glitch {
+    animation: none;
+  }
+}

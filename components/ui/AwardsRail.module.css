@@ -1,0 +1,76 @@
+.rail {
+  padding: var(--space-gutter);
+  background-color: var(--color-canvas);
+  border-top: 1px solid var(--color-border);
+}
+
+.railTitle {
+  color: var(--color-ink-muted);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.awardItem {
+  display: grid;
+  grid-template-columns: 8rem 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.awardItem:hover {
+  background-color: var(--color-surface);
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: var(--font-display-sans);
+  font-size: var(--text-body-xl);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.category {
+  font-size: var(--text-caption);
+  color: var(--color-ink-secondary);
+}
+
+.logo {
+  height: 1.5rem;
+  width: auto;
+  opacity: 0.6;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.awardItem:hover .logo {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .awardItem {
+    grid-template-columns: 4rem 1fr;
+    gap: 1rem;
+  }
+  .logo {
+    display: none;
+  }
+}

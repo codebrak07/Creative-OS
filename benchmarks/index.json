@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bruno_simon",
+    "name": "Bruno Simon",
+    "awards": ["SOTY", "SOTD", "FWA"],
+    "stack": ["Three.js", "WebGPU", "Rapier.js", "Howler.js", "Blender"],
+    "principles": [
+      "Concept equals experience - no separate design layer",
+      "Interaction before decoration - everything has physics/weight"
+    ],
+    "antiPatterns": [
+      "Generic grid layouts",
+      "Decorative 3D without physics"
+    ]
+  },
+  {
+    "id": "aristide_benoist",
+    "name": "Aristide Benoist",
+    "awards": ["SOTD", "FWA"],
+    "stack": ["Vanilla JS", "GSAP", "Custom RAF", "CSS Custom Properties"],
+    "principles": [
+      "Extreme micro-interaction refinement",
+      "Radical visual restraint - typography is the interface",
+      "Honesty - JavaScript required notice on fallback"
+    ],
+    "antiPatterns": [
+      "Framework bloat",
+      "Default animation curves",
+      "Template-like layouts"
+    ]
+  },
+  {
+    "id": "thomas_aufresne",
+    "name": "Thomas Aufresne",
+    "awards": ["SOTD"],
+    "stack": ["React", "GSAP", "Custom Cursor"],
+    "principles": [
+      "Numbered grid indexes",
+      "Extreme client-list focus - restraint is the flex",
+      "Asymmetric white space boundaries"
+    ],
+    "antiPatterns": [
+      "Image carousels",
+      "Default bento boxes"
+    ]
+  },
+  {
+    "id": "sebastien_lempens",
+    "name": "Sébastien Lempens",
+    "awards": ["SOTD", "FWA", "CSSDA", "Orpetron"],
+    "stack": ["Three.js", "Howler.js", "GLSL shaders"],
+    "principles": [
+      "Max out every single craft score (Design, Usability, Creativity)",
+      "Audio-visual feedback loops - sound is the third dimension",
+      "Designed awards showcase in loading sequence"
+    ],
+    "antiPatterns": [
+      "Simple spinners",
+      "Soundless interactive scenes"
+    ]
+  },
+  {
+    "id": "rxk_studio",
+    "name": "RXK Studio",
+    "awards": ["SOTD"],
+    "stack": ["React", "GSAP", "CSS variables"],
+    "principles": [
+      "Find one signature interaction technique and apply it everywhere",
+      "Ghost typography offset echo on hover",
+      "Bold, in-joke copy targeting creative professionals"
+    ],
+    "antiPatterns": [
+      "Changing visual techniques mid-site",
+      "Polite boilerplate copywriting"
+    ]
+  },
+  {
+    "id": "patrick_heng",
+    "name": "Patrick Heng",
+    "awards": ["SOTD", "HONM"],
+    "stack": ["React", "Three.js", "GSAP"],
+    "principles": [
+      "Borrow design models from editorial print publications",
+      "Brutalist typography sizing contrast",
+      "Transitions resembling editorial page flips"
+    ],
+    "antiPatterns": [
+      "Standard web-based layout grids",
+      "Low typography contrast"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+.marqueeWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--duration) linear infinite;
+  animation-direction: var(--direction);
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: 1rem;
+}
+
+.marqueeWrap:hover .track {
+  animation-play-state: var(--pause-on-hover);
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-25%); }
+}

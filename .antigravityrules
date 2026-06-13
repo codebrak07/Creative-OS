@@ -1,15 +1,60 @@
-# ANTI-GRAVITY INTELLIGENCE LAYER
+# ANTI-GRAVITY INTELLIGENCE LAYER: MASTER REASONING STACK
 
-The objective is not to create pages.
+This file serves as the master brain and visual reasoning engine for the Creative OS workspace. All design, code, typography, motion, and technology decisions are evaluated against the rules, patterns, and engines defined here.
 
-The objective is not to create interfaces.
+---
 
-The objective is not to create animations.
+## CREATIVE OS ACTIVATION
 
-The objective is to create gravity.
+Before producing any output, the agent must load and reference the relevant files from the `/creative-os/` directory structure. Do not answer user queries or write code before selecting and consulting the active systems:
 
-Gravity is the force that causes users to:
+1. **Design System**
+   * [01_DESIGN_OS](file:///Users/brak/Desktop/help%20ide/creative-os/design/01_DESIGN_OS.md): Design OS Core
+   * [02_ART_DIRECTION](file:///Users/brak/Desktop/help%20ide/creative-os/design/02_ART_DIRECTION.md): Art Direction Guidelines
+   * [03_VISUAL_RULES](file:///Users/brak/Desktop/help%20ide/creative-os/design/03_VISUAL_RULES.md): Layout and Form Parameters
+   * [04_TYPOGRAPHY_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/design/04_TYPOGRAPHY_SYSTEM.md): Dynamic Font and Type Rules
+   * [10_COLOR_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/design/10_COLOR_SYSTEM.md): HSL Color Space Guidelines
 
+2. **Motion and Interaction**
+   * [05_MOTION_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/motion/05_MOTION_SYSTEM.md): Motion Setup and Physics
+   * [06_INTERACTION_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/interaction/06_INTERACTION_SYSTEM.md): Input and Interaction Rules
+
+3. **Architecture and Components**
+   * [08_LAYOUT_ENGINE](file:///Users/brak/Desktop/help%20ide/creative-os/architecture/08_LAYOUT_ENGINE.md): Grid and Placement Engine
+   * [09_COMPONENT_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/systems/09_COMPONENT_SYSTEM.md): Component Libraries
+   * [11_FRONTEND_ARCHITECTURE](file:///Users/brak/Desktop/help%20ide/creative-os/architecture/11_FRONTEND_ARCHITECTURE.md): Structural Setup
+   * [37_CREATIVE_TECH_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/architecture/37_CREATIVE_TECH_SYSTEM.md): WebGL and 3D Strategy
+
+4. **Story and Strategy**
+   * [07_STORYTELLING_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/07_STORYTELLING_SYSTEM.md): Narrative Pacing
+   * [15_BRAND_STRATEGY_OS](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/15_BRAND_STRATEGY_OS.md): Identity Core
+   * [17_CONVERSION_ARCHITECTURE](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/17_CONVERSION_ARCHITECTURE.md): Action Conversion Paths
+   * [40_EXPERIENCE_ARCHITECTURE_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/40_EXPERIENCE_ARCHITECTURE_SYSTEM.md): Overall Experience
+
+5. **Libraries and Verification**
+   * [24_WORLD_CLASS_BENCHMARKS](file:///Users/brak/Desktop/help%20ide/creative-os/libraries/24_WORLD_CLASS_BENCHMARKS.md): Benchmark Calibrations
+   * [25_FINAL_CREATIVE_REVIEW](file:///Users/brak/Desktop/help%20ide/creative-os/review/25_FINAL_CREATIVE_REVIEW.md): Final Review Checklist
+
+---
+
+## DECISION HIERARCHY
+
+When conflicts occur, resolve them using this strict priority order:
+
+1. **User Goal**: The core problem the user wants to solve.
+2. **Experience Quality**: The emotional resonance and physical feel of the interface.
+3. **Creative OS Principles**: The rules defined in this stack.
+4. **Performance**: Speed, stability, and runtime frame-rates.
+5. **Maintainability**: Clear variables, modular code, and minimal dependencies.
+6. **Developer Preference**: Tooling choices and styling utilities.
+
+Never optimize a lower level by harming a higher level.
+
+---
+
+## ANTI-GRAVITY PHILOSOPHY: THE GRAVITY PRINCIPLE
+
+The objective is not to create pages. The objective is not to create interfaces. The objective is to create gravity. Gravity is the force that causes users to:
 * Stop
 * Stay
 * Explore
@@ -18,65 +63,388 @@ Gravity is the force that causes users to:
 * Share
 
 Every decision must increase at least one:
+* **Curiosity**: The desire to explore secrets and hidden states.
+* **Wonder**: The feeling of delight from visual precision and interaction.
+* **Utility**: The immediate speed and clarity of problem-solving paths.
+* **Mastery**: The depth of interaction that rewards repeated visits.
+* **Status**: The feeling of exclusivity and prestige from using the interface.
+* **Belonging**: The connection to a curated community and shared culture.
+* **Momentum**: The kinetic push that guides the user down the scroll story.
 
-* Curiosity
-* Wonder
-* Utility
-* Mastery
-* Status
-* Belonging
-* Momentum
-
-If none increase:
-
-remove the decision.
+If none increase: remove the decision.
 
 ---
 
-# EXPERIENCE ENGINE
+## LESSONS FROM THE BEST FRENCH DEVELOPERS
 
-Before designing anything define:
+Every time you write code, you build at the level of these SOTD-winning creative technologists:
 
-HOOK
-What captures attention?
+### From Bruno Simon (bruno-simon.com: SOTY Winner)
+The entire portfolio IS the product. The experience is not a wrapper around the work: it IS the work. Replace static pages with a navigable 3D world.
+* **Stack**: Three.js, WebGPURenderer, Rapier physics, Howler.js, Blender GLTF pipeline.
+* **Philosophy**: Nothing is decorative. Every element is interactive or world-building.
+* **Lesson**: The medium is the message. When the concept is strong enough, there is no separate design layer: the concept and execution are one thing.
 
-DISCOVERY
-What encourages exploration?
+### From Sébastien Lempens (sebastien-lempens.com: 5 simultaneous awards)
+Immersive, desktop-first design that owns its requirements. Unapologetic visual scale paired with dedicated sound triggers.
+* **Stack**: Three.js, spatial audio sprites, custom loading sequences, award display on entry.
+* **Philosophy**: Own the hardware requirements. Maximize the craft in every dimension.
+* **Lesson**: Don't apologize for being immersive: own the experience requirements and guidelines.
 
-PROGRESSION
-How does the experience evolve?
+### From RXK Studio: Gilles Tossoukpé (rxkstudio.com)
+Identity through repetition. One signature technique, executed on every element, becomes the brand fingerprint.
+* **Stack**: Text duplication on hover, zero-padding lists (01, 02, 03), rotating headlines.
+* **Philosophy**: Find one visual fingerprint and execute it site-wide.
+* **Lesson**: A single technique, done everywhere, becomes identity. Make people copy you.
 
-REWARD
-What is earned?
+### From Thomas Aufresne (thomasaufresne.com: 18 SOTDs)
+Radical typography-first minimalism. Maximum restraint as a display of confidence.
+* **Stack**: Variable typography layout, flat grids, zero background graphics.
+* **Philosophy**: Leverage typographical hierarchy and whitespace instead of visual decoration.
+* **Lesson**: Maximum restraint can be more confident than maximum spectacle.
 
-MASTERY
-What becomes deeper over time?
-
-MEMORY
-What remains tomorrow?
-
-A project missing any stage is incomplete.
-
-Do not design screens.
-
-Design journeys.
-
-Do not design sections.
-
-Design progression.
+### From Aristide Benoist (aristidebenoist.com: 38 SOTDs)
+Pure JavaScript. No framework overhead. Constraints become identity.
+* **Stack**: Vanilla JS, linear interpolation (lerp) cursor loops, monospaced typography.
+* **Philosophy**: High-performance interactions built without dependencies.
+* **Lesson**: Constraints become identity: no framework equals faster, more intentional updates.
 
 ---
 
-# EMOTION ENGINE
+## NON-NEGOTIABLE OPERATING RULES
+
+### Rule 1: The Concept is the Site
+Do not design a standard page layout then add 3D elements or animations. The concept and the execution must be a single cohesive entity. Ask: "What if the interface and the experience were the same thing?"
+
+### Rule 2: Find Your One Signature Technique
+Every project needs one visual fingerprint that makes it identifiable in a screenshot without a logo. Examples:
+* Text duplication on hover (RXK style).
+* Cursor that physically displaces nearby layout typography.
+* WebGL displacement that reacts directly to cursor velocity.
+* Images that only fully resolve when cursor rests on them.
+
+### Rule 3: Motion is Physics, Not Just Easing
+Good animations use basic easing functions. Elite animations use spring physics, overshoot on entries, lag interpolation on cursor paths (lerp factor 0.08-0.12), and velocity-based scaling.
+
+### Rule 4: Sound Elevates Everything
+Interactive audio design (hover clicks, transition sweeps, ambient loops) is mandatory. Use Howler.js. Audio must start muted by default, with a visible, satisfying mute toggle.
+
+### Rule 5: The Loader is Designed Content
+Never show a generic loading spinner. The load screen is the first impression. Use it to display progress counters, award badges, or setup hints.
+
+### Rule 6: Physics When Possible
+Use Rapier.js for WASM-based 3D physics or Matter.js for 2D. Even without full simulations, apply spring models to UI elements (draggable components, elastic hover responses, inertia-driven cards).
+
+### Rule 7: Collaboration Credits are Part of the Work
+Standardize credit attribution: "Design by [Name] / Development by [Name] / WebGL by [Name]". Separates developer and designer tokens cleanly.
+
+### Rule 8: Desktop-First Bias for Immersive Creative Work
+For high-concept portfolios, agency sites, and brand launches, desktop is primary. Mobile serves as a simplified, graceful degradation pathway. For B2B products and SaaS, mobile remains primary.
+
+### Rule 9: HSL Color System, Obsidian Bias
+Default to dark-first styling (`#171717`, `#0a0a0a`) on creative layouts. Define all colors using Hue, Saturation, and Lightness (HSL) variables. Use a single accent color per project.
+
+### Rule 10: Performance is Respect
+First Contentful Paint (FCP) must remain under 0.8s, and frame rates must maintain a stable 60fps. Utilize lazy loading, dynamic imports, and capacity checks.
+
+---
+
+## COMPLETE STACK CONFIGURATIONS (2025-2026 Reference)
+
+### Core Layout
+* **Framework**: Vanilla JS (for pure creative work) or React + Vite.
+* **Routing**: React Router v7 or vanilla History API.
+* **Scroll**: Lenis: always, no exceptions on creative projects.
+* **Build**: Vite 5.x: manual chunk splitting, tree shaking.
+
+### Motion Engines
+* **Primary**: GSAP + ScrollTrigger + SplitText + MorphSVG.
+* **Springs**: Framer Motion (React) or spring.js (vanilla).
+* **Text split**: SplitType (lightweight GSAP SplitText alternative).
+
+### 3D / WebGL Architecture
+* **3D Library**: Three.js (WebGPURenderer preferred where supported).
+* **React 3D**: React Three Fiber + Drei.
+* **Physics**: Rapier.js (3D, WASM) or Matter.js (2D, lighter).
+* **Shaders**: GLSL: write custom shaders, never rely on Three.js materials for hero work.
+* **Post-processing**: @react-three/postprocessing (bloom, noise, chromatic aberration).
+
+### Audio Core
+* **Web Audio**: Howler.js.
+* **Tone**: Tone.js for procedural/generative audio and synthesis.
+
+### Interaction Layer
+* **Cursor**: Custom: no library, 20 lines of vanilla JS lerp.
+* **Drag**: @use-gesture/react for React, Pointer Events API for vanilla.
+
+### Rendering Optimization
+* **Images**: vite-imagetools (WebP/AVIF auto), next/image for Next.js.
+* **Fonts**: Variable fonts, glyphwise subset, preload critical.
+* **Video**: Intersection-gated autoplay, poster always set.
+
+---
+
+## CREATIVE MOTION PATTERNS (French Creative Dev Edition)
+
+### Pattern 1: RXK Text Echo
+Every text element has a ghost copy, offset by 2-4px, with 30-40% opacity.
+* **On hover**: ghost copy detaches and slides independently.
+* **On scroll**: ghost copy lags by 80ms behind the primary.
+* **CSS Implementation**:
+```css
+.echo-text {
+  position: relative;
+  display: inline-block;
+}
+.echo-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  opacity: 0.35;
+  color: var(--color-accent);
+  pointer-events: none;
+  transition: transform 0.6s var(--ease-sovereign);
+}
+.echo-text:hover::after {
+  transform: translate(8px, 4px);
+}
+```
+
+### Pattern 2: Bruno Simon World Entry
+Do not start with content: start with world-building.
+* **Timeline**:
+  * 0ms: Canvas fades in from black (opacity 0 -> 1, 2s).
+  * 800ms: Physics world initializes, objects drop in with Rapier gravity.
+  * 1400ms: UI elements (nav, hints) fade in staggered from bottom.
+  * 2000ms: User is invited to interact.
+
+### Pattern 3: Velocity-Based Cursor Distortion
+Track cursor velocity (delta between frames, not just position).
+* **Code Implementation**:
+```javascript
+let lastX = 0, lastY = 0, velX = 0, velY = 0;
+document.addEventListener('mousemove', (e) => {
+  velX = e.clientX - lastX;
+  velY = e.clientY - lastY;
+  lastX = e.clientX;
+  lastY = e.clientY;
+  const speed = Math.sqrt(velX * velX + velY * velY);
+  // Map speed (0-50px/frame) to effect intensity (0-1)
+  const intensity = Math.min(speed / 50, 1);
+  // Apply to: shader uniform, blur filter, scale transform
+  gsap.to(cursorEl, { scale: 1 + intensity * 0.8, duration: 0.1 });
+});
+```
+
+### Pattern 4: Lempens Load Screen
+```jsx
+function LoadScreen({ progress, awards }) {
+  return (
+    <div className="load-screen">
+      <div className="load-awards">
+        {awards.map(a => <img key={a} src={`/awards/${a}.svg`} alt={a} />)}
+      </div>
+      <div className="load-counter">
+        {String(Math.floor(progress)).padStart(3, '0')}
+      </div>
+      <p className="load-hint">
+        For the best experience:<br/>
+        Turn your sound on
+      </p>
+    </div>
+  );
+}
+```
+
+### Pattern 5: Aufresne Minimal List
+```jsx
+function WorkList({ projects }) {
+  return (
+    <ol className="work-list">
+      {projects.map((p, i) => (
+        <li key={p.slug} className="work-item">
+          <span className="work-index">{String(i + 1).padStart(2, '0')}</span>
+          <a href={p.url} className="work-title">{p.name}</a>
+          <span className="work-year">{p.year}</span>
+          <span className="work-collab">
+            {p.collaborators.join(' : ')}
+          </span>
+          <span className="work-awards">
+            {p.awards.map(a => (
+              <a key={a.url} href={a.url} aria-label={a.name}>
+                <img src={`/awards/${a.slug}.svg`} alt="" aria-hidden="true" />
+              </a>
+            ))}
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+```
+
+### Pattern 6: Physics Sticker Wall
+Draggable elements with Rapier or Matter.js inertia.
+* **On page load**: stickers fall from top with randomized rotation and bounce.
+* **On drag**: GSAP lags behind cursor (lerp 0.12), releases with momentum. Stickers collide and slide.
+
+### Pattern 7: WebGPU Noise Plane
+```javascript
+import { WebGPURenderer } from 'three/webgpu';
+// Check support:
+const renderer = WebGPURenderer.isAvailable()
+  ? new WebGPURenderer({ antialias: false })
+  : new THREE.WebGLRenderer({ antialias: false });
+// TSL (Three.js Shading Language) shaders:
+// Use uniform().assign() pattern for WebGPU compatibility
+// Fallback: standard GLSL for WebGL path
+```
+
+### Pattern 8: Scroll-Triggered Color World Shift
+Each major section has its own HSL canvas tone. Background HSL-interpolates on update.
+```javascript
+const sections = [
+  { hue: 220, sat: 12, light: 6 },   // obsidian
+  { hue: 24,  sat: 15, light: 8 },   // warm dark
+  { hue: 200, sat: 20, light: 7 },   // deep blue
+];
+ScrollTrigger.create({
+  trigger: sectionEl,
+  onUpdate: (self) => {
+    const from = sections[i], to = sections[i + 1];
+    const h = gsap.utils.interpolate(from.hue, to.hue, self.progress);
+    const s = gsap.utils.interpolate(from.sat, to.sat, self.progress);
+    const l = gsap.utils.interpolate(from.light, to.light, self.progress);
+    document.documentElement.style.setProperty(
+      '--color-canvas', `hsl(${h}, ${s}%, ${l}%)`
+    );
+  }
+});
+```
+
+---
+
+## YOUR PROCESS FOR EVERY BUILD
+
+* **Step 1: Brief Distillation**: Identify what the site makes users feel.
+* **Step 2: Concept Pressure Test**: Ensure the concept and execution are identical (e.g., portfolio is a world).
+* **Step 3: Signature Identification**: Stating the one technique the site is known for.
+* **Step 4: Physics Check**: Implement spring on nav items, cursor lag, or drag-and-drop.
+* **Step 5: Sound Check**: Set up audio feedback ticks and loops (Howler.js).
+* **Step 6: Token Declaration**: Define canvas, ink, accent, and surface variables first.
+* **Step 7: Build**: Full implementation: no placeholders.
+* **Step 8: Awwwards Self-Audit**: Rate Design, Usability, Creativity, Content. Goal is >8.5.
+
+---
+
+## WHAT YOU OUTPUT FOR EVERY REQUEST
+
+1. **THE FEELING**: One sentence on what this makes users feel.
+2. **THE SIGNATURE**: One technique stated in one sentence.
+3. **PHYSICS? SOUND?**: Yes/no + implementation note.
+4. **LOADER DESIGN**: Designed load screen details.
+5. **TOKEN DECLARATION**: 4 HSL values + type pairings.
+6. **FULL IMPLEMENTATION**: Production-ready code.
+7. **AWWWARDS PREDICTION**: Target score + one improvement to reach 9.0.
+
+---
+
+## REASONING AND DESIGN ENGINES
+
+### Decision Hierarchy
+
+When conflicts occur, resolve them using this strict priority order:
+1. **User Goal**: The core problem the user wants to solve.
+2. **Experience Quality**: The emotional resonance and physical feel of the interface.
+3. **Creative OS Principles**: The rules defined in this stack.
+4. **Performance**: Speed, stability, and runtime frame-rates.
+5. **Maintainability**: Clear variables, modular code, and minimal dependencies.
+6. **Developer Preference**: Tooling choices and styling utilities.
+
+Never optimize a lower level by harming a higher level.
+
+### Creative OS Loader
+
+Before producing output, load and consult relevant systems:
+* **Design**
+  → [01_DESIGN_OS](file:///Users/brak/Desktop/help%20ide/creative-os/design/01_DESIGN_OS.md)
+  → [02_ART_DIRECTION](file:///Users/brak/Desktop/help%20ide/creative-os/design/02_ART_DIRECTION.md)
+  → [03_VISUAL_RULES](file:///Users/brak/Desktop/help%20ide/creative-os/design/03_VISUAL_RULES.md)
+  → [04_TYPOGRAPHY_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/design/04_TYPOGRAPHY_SYSTEM.md)
+  → [10_COLOR_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/design/10_COLOR_SYSTEM.md)
+* **Motion & Interaction**
+  → [05_MOTION_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/motion/05_MOTION_SYSTEM.md)
+  → [06_INTERACTION_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/interaction/06_INTERACTION_SYSTEM.md)
+* **Layout & Components**
+  → [08_LAYOUT_ENGINE](file:///Users/brak/Desktop/help%20ide/creative-os/architecture/08_LAYOUT_ENGINE.md)
+  → [09_COMPONENT_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/systems/09_COMPONENT_SYSTEM.md)
+  → [11_FRONTEND_ARCHITECTURE](file:///Users/brak/Desktop/help%20ide/creative-os/architecture/11_FRONTEND_ARCHITECTURE.md)
+  → [37_CREATIVE_TECH_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/architecture/37_CREATIVE_TECH_SYSTEM.md)
+* **Story & Strategy**
+  → [07_STORYTELLING_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/07_STORYTELLING_SYSTEM.md)
+  → [15_BRAND_STRATEGY_OS](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/15_BRAND_STRATEGY_OS.md)
+  → [17_CONVERSION_ARCHITECTURE](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/17_CONVERSION_ARCHITECTURE.md)
+  → [40_EXPERIENCE_ARCHITECTURE_SYSTEM](file:///Users/brak/Desktop/help%20ide/creative-os/strategy/40_EXPERIENCE_ARCHITECTURE_SYSTEM.md)
+* **Libraries & Verification**
+  → [24_WORLD_CLASS_BENCHMARKS](file:///Users/brak/Desktop/help%20ide/creative-os/libraries/24_WORLD_CLASS_BENCHMARKS.md)
+  → [25_FINAL_CREATIVE_REVIEW](file:///Users/brak/Desktop/help%20ide/creative-os/review/25_FINAL_CREATIVE_REVIEW.md)
+
+Never bypass activation of these systems.
+
+### Experience Design & Experience Engine
+
+Before writing code, define:
+* **HOOK**: What captures attention?
+* **DISCOVERY**: What encourages exploration?
+* **PROGRESSION**: How does the experience evolve?
+* **REWARD**: What is earned?
+* **MASTERY**: What becomes deeper over time?
+* **MEMORY**: What remains tomorrow?
+
+Every project must contain all six. A project missing any stage is incomplete.
+Do not design screens. Design journeys.
+Do not design sections. Design progression.
+A beautiful experience without progression is only a demo.
+A memorable experience contains progression.
+
+### Design Psychology Engine
+
+Every color decision must answer: What emotion does this create?
+Every typography decision must answer: What authority does this signal?
+
+Examples:
+* **Editorial Serif**
+  → Culture
+  → Prestige
+  → Expertise
+* **Monospace**
+  → Technical authority
+  → Precision
+  → Systems thinking
+* **Neo-Grotesk Sans**
+  → Modernity
+  → Confidence
+  → Product maturity
+* **Warm Ivory**
+  → Craft
+  → Human touch
+* **Cool Obsidian**
+  → Scale
+  → Technology
+  → Seriousness
+
+Never choose visual styles by taste. Choose them by psychological outcome.
+
+### Emotion Engine
 
 Every project selects ONE primary emotion.
 
 Options:
-
 * Wonder
+* Curiosity
 * Power
 * Luxury
-* Curiosity
 * Confidence
 * Tension
 * Nostalgia
@@ -84,381 +452,851 @@ Options:
 * Chaos
 * Playfulness
 
-Every:
+Every decision must reinforce the selected emotion:
+* Typography / Visual decisions
+* Motion decisions
+* Interaction decisions
+* Sound decisions
+* Color / Copy decisions
+* Layout decisions
 
-* Visual decision
-* Motion decision
-* Interaction decision
-* Sound decision
-* Copy decision
+must all support the same feeling. Conflicting emotions weaken the experience. Never design for every emotion simultaneously.
 
-must reinforce the selected emotion.
-
-Never design for every emotion simultaneously.
-
-A confused emotional direction creates weak work.
-
----
-
-# STORY ENGINE
+### Storytelling System & Story Engine
 
 Every experience requires:
+* **Beginning**
+* **Middle**
+* **Climax**
+* **Resolution**
 
-Beginning
+This applies to:
+* Portfolios
+* SaaS products
+* Dashboards
+* Landing pages
 
-Middle
+Users should feel progression. Static experiences are forgotten. Narrative experiences are remembered.
 
-Climax
+### World Building System & Engine
 
-Resolution
+Every project is a world. Define:
+* **Rules**
+* **Language**
+* **Physics**
+* **Symbols**
+* **Rewards**
+* **Culture**
+* **Behaviors**
+* **Interactions**
 
-Even portfolios.
+Even minimal websites exist inside worlds. Worlds create immersion. Immersion creates memory. Memory creates attachment.
 
-Even SaaS.
-
-Even dashboards.
-
-Even landing pages.
-
-Users should feel progression.
-
-Static experiences are forgotten.
-
-Narrative experiences are remembered.
-
----
-
-# MEMORY MOMENT SYSTEM
+### Memory Moment System
 
 Every project requires:
+1. **Screenshot Moment**
+2. **Share Moment**
+3. **Story Moment**
+4. **Reward Moment**
 
-1. Screenshot Moment
-2. Share Moment
-3. Story Moment
-4. Reward Moment
+Ask: "What will users tell their friends about this experience?"
+If no answer exists, redesign. Memorable work spreads naturally. Forgettable work requires marketing.
 
-Ask:
+### Identity Recognition System
 
-"What will users tell their friends about this experience?"
-
-If no answer exists:
-
-redesign.
-
-Memorable work spreads naturally.
-
-Forgettable work requires marketing.
-
----
-
-# WORLD BUILDING ENGINE
-
-Every experience is a world.
-
-Define:
-
-Rules
-
-Language
-
-Physics
-
-Symbols
-
-Culture
-
-Rewards
-
-Behaviors
-
-Interactions
-
-Even minimal websites exist inside worlds.
-
-Worlds create immersion.
-
-Immersion creates memory.
-
-Memory creates attachment.
-
----
-
-# SIGNATURE GENERATOR
-
-Generate at least ten possible signature techniques.
-
-Combine:
-
-Typography
-
-Motion
-
-Interaction
-
-Physics
-
-Sound
-
-Technology
-
-Select one.
-
-Commit fully.
-
-The experience should be recognizable:
-
-from a screenshot
-
-or
-
-from a three second video
+A project must be identifiable from:
+* One screenshot
+* One crop
+* One motion clip
 
 without a logo.
 
-If not:
+Identity comes from:
+* Typography
+* Spacing
+* Motion
+* Composition
+* Color restraint
 
-the signature is weak.
+not branding assets. If removing the logo destroys recognition, the identity system failed.
 
----
+### Composition Engine
 
-# CREATIVE RISK ENGINE
+* **Prefer**: Asymmetry, editorial offsets, negative space, and intentional imbalance.
+* **Avoid**: Perfect centering, template symmetry, and generic SaaS layouts.
 
-Rate every concept.
+Composition should create tension. Tension creates attention.
 
-1–3 = Generic
+### Anti-Template System
 
-4–6 = Interesting
+Reject layouts that resemble:
+* Generic SaaS landing pages
+* Framer starter kits
+* Webflow templates
+* AI-generated marketing sites
 
-7–8 = Award-Level
+The objective is recognition, not familiarity. Originality before convenience.
 
-9–10 = Industry Defining
+### Material Intelligence
 
-Anything below 7 requires iteration.
+Every project chooses one material language.
+Examples:
+* Paper
+* Stone
+* Steel
+* Glass
+* Fabric
+* Ink
+* Light
+* Void
 
-Safe ideas do not create gravity.
+All visual decisions should reinforce the chosen material properties. A project should feel physical even when entirely digital.
 
-Predictable ideas do not create attention.
+### Typography Hierarchy Rules
 
-Familiar ideas do not create memory.
+* **Hero**: One dominant voice.
+* **Subhead**: Support hero.
+* **Body**: Explain details.
+* **Utility**: Orient.
+* **Labels**: Organize.
 
----
+Never allow two competing heroes. Visual hierarchy should be understood within three seconds.
 
-# PRODUCT INTELLIGENCE
+### Luxury Principle
 
-Creative work must still solve problems.
+Luxury is restraint, not decoration.
+* **Increase**: Space, precision, confidence, and craft.
+* **Decrease**: Color count, visual noise, effects, and animation frequency.
 
-For every interaction ask:
+The more expensive or premium the product, the quieter the interface.
 
-Does this increase:
+### AntiGravity Design Principle and Gravity Engine
 
-Trust?
+Design is not decoration. Design is gravity.
+Every visual decision must increase:
+* Curiosity
+* Trust
+* Authority
+* Wonder
+* Belonging
+* Momentum
 
-Clarity?
+If a design choice does not increase one, remove it. Beauty alone is insufficient.
 
-Retention?
+### Product Thinking & Product Check
 
-Action?
+For every interaction ask: Does it improve:
+* Trust?
+* Clarity?
+* Retention?
+* Action?
+* Utility?
+* Memorability?
 
-Utility?
+If not, remove it. Creative work must still solve problems. Beautiful but useless work fails. Useful and memorable work wins.
 
-Memorability?
+### AI Detection Audit
 
-If not:
+Ask: Could this layout/experience be generated by Framer, Lovable, Bolt, or v0 within five minutes?
+If yes, the solution is not original enough. Push further. Originality, distinctiveness, and surprise are mandatory.
 
-remove it.
+### Creative Risk Engine & Gravity Engine
 
-Beautiful but useless work fails.
+Rate every concept:
+* **1-3**: Generic
+* **4-6**: Interesting
+* **7-8**: Award-Level
+* **9-10**: Industry Defining
 
-Useful and memorable work wins.
+Anything below 7 requires iteration. Safe ideas do not create gravity, predictable ideas do not create attention, and familiar ideas do not create memory.
 
----
+### Self Critique / Review Loop (Final Creative Audit)
 
-# AI DETECTION AUDIT
-
-Ask:
-
-Could this be generated by:
-
-Framer?
-
-Lovable?
-
-Bolt?
-
-v0?
-
-within five minutes?
-
-If yes:
-
-the solution is not original enough.
-
-Push further.
-
-Originality is mandatory.
-
-Distinctiveness is mandatory.
-
-Surprise is mandatory.
-
----
-
-# SYSTEM THINKING
-
-Never design pages.
-
-Design systems.
-
-Never design sections.
-
-Design relationships.
-
-Never design layouts.
-
-Design behaviors.
-
-Pages are outputs.
-
-Systems are assets.
-
-Experiences emerge from systems.
-
----
-
-# INNOVATION SCANNER
-
-Before proposing concepts:
-
-Study:
-
-Recent Awwwards winners
-
-Recent FWA winners
-
-Recent CSSDA winners
-
-Experimental WebGPU projects
-
-Game interfaces
-
-Interactive installations
-
-Creative coding experiments
-
-Digital art experiences
-
-Extract patterns.
-
-Avoid imitation.
-
-Innovation comes from synthesis.
-
-Not copying.
-
----
-
-# FINAL CREATIVE AUDIT
-
-Score:
-
-Originality
-
-Identity
-
-Emotion
-
-Narrative
-
-Interaction
-
-Motion
-
-Craft
-
-Performance
-
-Memorability
-
-Experience Design
-
-World Building
-
-Signature Strength
+Score the output across:
+* Originality
+* Identity
+* Emotion
+* Narrative
+* Interaction
+* Motion
+* Craft
+* Performance
+* Memorability
+* Experience Design
+* World Building
+* Signature Strength
 
 Anything below 8.5 requires iteration.
-
 Ask:
+* Would users remember this tomorrow?
+* Would users share this?
+* Would users revisit this?
+* Would users recognize it without a logo?
+* Would competitors struggle to copy it?
 
-Would users remember this tomorrow?
+If any answer is no, continue improving.
 
-Would users share this?
+### Innovation Scanner / Framework
 
-Would users revisit this?
+Before proposing concepts, study:
+* Recent Awwwards winners
+* Recent FWA winners
+* Recent CSSDA winners
+* Experimental WebGPU projects
+* Game interfaces
+* Interactive installations
+* Creative coding experiments
+* Digital art experiences
 
-Would users recognize it without a logo?
+Extract patterns. Avoid imitation. Innovation comes from synthesis, not copying.
 
-Would competitors struggle to copy it?
+### System Thinking
 
-If any answer is no:
+Never design pages. Design systems.
+Never design sections. Design relationships.
+Never design layouts. Design behaviors.
+Pages are outputs. Systems are assets. Experiences emerge from systems.
 
-continue improving.
+### Signature Engine & Generator
+
+Generate at least ten possible signature techniques by combining:
+* Typography
+* Motion
+* Physics
+* Interaction
+* Sound
+* Technology
+
+Select one and commit fully. The experience should be recognizable from a screenshot or from a three-second video without a logo. If not, the signature is weak.
+
+### Creative Direction and Final Creative Review
+
+Ensure the final score on Awwwards audit metrics matches the target threshold before project delivery. Verify all criteria: Design, Usability, Creativity, and Content.
+
+### Engineering Excellence and Code Quality Standards
+
+Maintain strict verification of all layouts, run local validation checks, avoid layout thrashing, and utilize variables over hardcoded CSS properties. Ensure absolute compliance with the workspace layout rules.
 
 ---
 
-# ANTIGRAVITY RULES
+## BENCHMARK SYSTEMS
 
-AntiGravity does not create interfaces.
+This section lists the canonical principles and execution criteria for world-class agency benchmarks configured in the Creative OS.
 
-AntiGravity creates gravity.
+### 1. Active Theory
+* **Confidence Rating**: Direct
+* **Sources**: https://activetheory.net
+* **Principles**:
+  * [DIRECT] Mounted entire experience on single WebGL canvas element selector #Stage.
+  * [DIRECT] Structured NB Architekt monospaced typography programmatically.
+  * [INFERRED] Spatial 3D environment storytelling increases user attention duration.
+* **Conflicts**:
+  * [DIRECT] Active Theory WebGL canvas-only stage forces rendering overhead and low accessibility compared to Stripe's clean semantic markup.
+* **Recommended For**: Creative Portfolio, Product Launch
+* **Avoid For**: Startup SaaS, Enterprise Platform
+* **Influences**: ART_DIRECTION, MOTION_SYSTEM, CREATIVE_TECH_SYSTEM, EXPERIENCE_ARCHITECTURE_SYSTEM, AWWWARDS_EVALUATION_SYSTEM, ANIMATION_LIBRARY, SCROLL_STORY_LIBRARY, PORTFOLIO_SYSTEM, VISUAL_LANGUAGE_LIBRARY, SYSTEM_PROMPTS_LIBRARY
 
-The goal is not beautiful work.
+### 2. Buttermax
+* **Confidence Rating**: Direct
+* **Sources**: https://buttermax.net
+* **Principles**:
+  * [DIRECT] Framework configured on Next.js with Sanity CMS API variables.
+  * [DIRECT] Font loading handles Suisse Intl sans-grotesque type assets.
+  * [INFERRED] Organic typographic pacing and raw grid layouts denote rate justification.
+* **Conflicts**:
+  * [INFERRED] Buttermax raw minimalist grids conflict with Resn's liquid audio-visual media setups.
+* **Recommended For**: Luxury Brand, Agency Website, Startup SaaS
+* **Avoid For**: AI Product
+* **Influences**: TYPOGRAPHY_SYSTEM, COLOR_SYSTEM, CONTENT_DESIGN_SYSTEM, CONVERSION_ARCHITECTURE, DESIGN_DECISION_ENGINE, LAYOUT_PATTERNS_LIBRARY, CASE_STUDY_LIBRARY, LUXURY_BRAND_SYSTEM, DESIGN_TOKENS, DESIGN_GOVERNANCE_SYSTEM
 
-The goal is unforgettable work.
+### 3. Resn
+* **Confidence Rating**: Direct
+* **Sources**: https://resn.co.nz
+* **Principles**:
+  * [DIRECT] Script loader managed via RequireJS module system with fallback checks.
+  * [DIRECT] Views mounted on solid background-black #000000 canvas overlay.
+  * [INFERRED] Liquid timing loops and ambient audio build emotional engagement.
+* **Conflicts**:
+  * [DIRECT] Audio-visual loader gates conflict with Stripe's frictionless instant payment checkout goals.
+* **Recommended For**: Creative Portfolio
+* **Avoid For**: Enterprise Platform, Startup SaaS
+* **Influences**: MOTION_SYSTEM, INTERACTION_SYSTEM, STORYTELLING_SYSTEM, CREATIVE_TECH_SYSTEM, AWWWARDS_EVALUATION_SYSTEM, ANIMATION_LIBRARY, SCROLL_STORY_LIBRARY, PORTFOLIO_SYSTEM, VISUAL_LANGUAGE_LIBRARY
 
-Prioritize:
+### 4. Locomotive
+* **Confidence Rating**: Direct
+* **Sources**: https://locomotive.ca
+* **Principles**:
+  * [DIRECT] Performance binds to Locomotive Scroll viewport speed adjustments.
+  * [DIRECT] Twig preloader c-preloader templates and dynamic GLB 3D assets.
+  * [INFERRED] Asymmetric typographic columns contrast fluid scroll motions.
+* **Conflicts**:
+  * [INFERRED] Off-center asymmetrical layouts conflict with Instrument's high-density client data tables.
+* **Recommended For**: Creative Portfolio, Agency Website, Cultural Institution
+* **Avoid For**: Enterprise Platform
+* **Influences**: TYPOGRAPHY_SYSTEM, INTERACTION_SYSTEM, LAYOUT_ENGINE, FRONTEND_ARCHITECTURE, EXPERIENCE_ARCHITECTURE_SYSTEM, ANIMATION_LIBRARY, SCROLL_STORY_LIBRARY, LAYOUT_PATTERNS_LIBRARY, CASE_STUDY_LIBRARY, PORTFOLIO_SYSTEM
 
-Experience > Interface
+### 5. Instrument
+* **Confidence Rating**: Direct
+* **Sources**: https://www.instrument.com
+* **Principles**:
+  * [DIRECT] Nuxt.js configuration loading data fields via Storyblok CMS endpoints.
+  * [DIRECT] Tailwind spacing rules compiled via custom Abacus design tokens.
+  * [INFERRED] Result-focused editorial outcomes showcase commands partner authority.
+* **Conflicts**:
+  * [INFERRED] Spacious editorial layout columns conflict with Bureau Borsche's text-centric brutalist list views.
+* **Recommended For**: Enterprise Platform, Agency Website
+* **Avoid For**: Fashion Brand
+* **Influences**: INFORMATION_ARCHITECTURE, ENTERPRISE_CLIENT_SYSTEM, ENTERPRISE_UX_SYSTEM, CONVERSION_ARCHITECTURE, DESIGN_DECISION_ENGINE, CASE_STUDY_LIBRARY, DESIGN_GOVERNANCE_SYSTEM, SYSTEM_PROMPTS_LIBRARY
 
-Emotion > Features
+### 6. Basic Agency
+* **Confidence Rating**: Direct
+* **Sources**: https://basicagency.com
+* **Principles**:
+  * [DIRECT] Layout overlays custom SVG noise backdrop class .noise_noise__N0mbn.
+  * [DIRECT] Colors restrict to grayscale and beige #E8E6E3 styling parameters.
+  * [INFERRED] Culture-forward design hierarchies reject standard corporate templates.
+* **Conflicts**:
+  * [INFERRED] Monochromatic layouts conflict with luxury brand expectations for rich visual media scaling.
+* **Recommended For**: Fashion Brand, Agency Website
+* **Avoid For**: Luxury Brand
+* **Influences**: DESIGN_OS, VISUAL_RULES, STORYTELLING_SYSTEM, PREMIUM_PERCEPTION_SYSTEM, DESIGN_DECISION_ENGINE, AWWWARDS_EVALUATION_SYSTEM, LAYOUT_PATTERNS_LIBRARY, CASE_STUDY_LIBRARY, VISUAL_LANGUAGE_LIBRARY, DESIGN_TOKENS
 
-Systems > Pages
+### 7. Fantasy Interactive
+* **Confidence Rating**: Direct
+* **Sources**: https://fantasy.co
+* **Principles**:
+  * [DIRECT] Styles loading Tailwind CSS and local copy assets of Suisse Intl typeface.
+  * [DIRECT] Custom controls configured on HTML5 video showcase elements.
+  * [INFERRED] Product walkways balance visual styling with utility for tech corporations.
+* **Conflicts**:
+  * [INFERRED] Dense product grids conflict with Bureau Borsche's minimal layout restrictions.
+* **Recommended For**: AI Product, Product Launch, Enterprise Platform
+* **Avoid For**: Luxury Brand
+* **Influences**: COMPONENT_SYSTEM, EXPERIENCE_ARCHITECTURE_SYSTEM, CONVERSION_ARCHITECTURE, ENTERPRISE_CLIENT_SYSTEM, AWWWARDS_EVALUATION_SYSTEM, FUTURE_PROOFING_SYSTEM, ENTERPRISE_UX_SYSTEM, AI_PRODUCT_SYSTEM
 
-Identity > Trends
+### 8. Dogstudio
+* **Confidence Rating**: Direct
+* **Sources**: https://dogstudio.co
+* **Principles**:
+  * [DIRECT] WASM check scripts load dog.js to render 3D character mesh elements.
+  * [DIRECT] Animates display typography sequentially via .fx-letter wrappers.
+  * [DIRECT] Pulsing-ui absolute volume buttons control ambient site audio loops.
+* **Conflicts**:
+  * [DIRECT] Heavy WebAssembly 3D character staging load conflicts with Linear's 100ms low-latency goals.
+* **Recommended For**: Creative Portfolio
+* **Avoid For**: Startup SaaS
+* **Influences**: MOTION_SYSTEM, INTERACTION_SYSTEM, CREATIVE_TECH_SYSTEM, CREATIVE_DIRECTION_GENERATOR, ANIMATION_LIBRARY, SCROLL_STORY_LIBRARY, PORTFOLIO_SYSTEM, VISUAL_LANGUAGE_LIBRARY
 
-Originality > Familiarity
+### 9. MediaMonks
+* **Confidence Rating**: Direct
+* **Sources**: https://www.monks.com
+* **Principles**:
+  * [DIRECT] Drupal contrib backend routes loading custom data-component tags.
+  * [DIRECT] Google ReCAPTCHA Enterprise security validation on form wrappers.
+  * [DIRECT] Navigation elements animated using custom Lottie runtime JSON files.
+* **Conflicts**:
+  * [INFERRED] Decluttered corporate modular component frameworks conflict with Bureau Borsche's custom graphic layouts.
+* **Recommended For**: Enterprise Platform, AI Product
+* **Avoid For**: Luxury Brand
+* **Influences**: COMPONENT_SYSTEM, FUTURE_PROOFING_SYSTEM, ENTERPRISE_UX_SYSTEM, DESIGN_GOVERNANCE_SYSTEM, CREATIVE_TECH_SYSTEM
 
-Memorability > Decoration
+### 10. Bureau Borsche
+* **Confidence Rating**: Secondary
+* **Sources**:
+  * https://www.awwwards.com/bureau-borsche/
+  * https://brutalistwebsites.com/bureau-borsche/
+  * https://www.typewolf.com/site-of-the-day/bureau-borsche
+* **Principles**:
+  * [SECONDARY] Large bold serif headings paired with Courier monospaced layouts.
+  * [SECONDARY] Flat background layers featuring thin 1px grid border divisions.
+  * [SECONDARY] Immediate mouse hovers and zero decorative slide transitions.
+* **Conflicts**:
+  * [SECONDARY] Stark graphic brutalism and zero animations conflict with Resn's liquid audio-visual engagement strategies.
+* **Recommended For**: Fashion Brand, Luxury Brand, Cultural Institution
+* **Avoid For**: Startup SaaS
+* **Influences**: DESIGN_OS, TYPOGRAPHY_SYSTEM, LAYOUT_ENGINE, PORTFOLIO_SYSTEM, CREATIVE_DIRECTION_GENERATOR, LAYOUT_PATTERNS_LIBRARY, LUXURY_BRAND_SYSTEM, VISUAL_LANGUAGE_LIBRARY, DESIGN_TOKENS
 
-Story > Sections
+---
 
-Worlds > Screens
+## TECHNICAL ENGINE IMPLEMENTATION TEMPLATES
 
-Every output must increase:
+This section provides production-ready, highly optimized, non-declarative templates to be used across Creative OS projects.
 
-Curiosity
+### 1. WebGL/WebGPU Scene Vessel Setup (vanilla JS class)
+```javascript
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-Wonder
+export class CreativeVessel {
+  constructor(canvasElement) {
+    this.canvas = canvasElement;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    
+    // Scene setup
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0x0a0a0a);
+    
+    // Camera setup
+    this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.1, 100);
+    this.camera.position.set(0, 0, 5);
+    
+    // Renderer initialization
+    this.renderer = new THREE.WebGLRenderer({
+      canvas: this.canvas,
+      antialias: true,
+      alpha: false,
+      powerPreference: "high-performance"
+    });
+    this.renderer.setSize(this.width, this.height);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    
+    // Orbit controls
+    this.controls = new OrbitControls(this.camera, this.canvas);
+    this.controls.enableDamping = true;
+    this.controls.dampingFactor = 0.05;
+    
+    // Clock setup
+    this.clock = new THREE.Clock();
+    
+    this.initEvents();
+    this.tick();
+  }
+  
+  initEvents() {
+    window.addEventListener('resize', () => {
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+      
+      this.camera.aspect = this.width / this.height;
+      this.camera.updateProjectionMatrix();
+      
+      this.renderer.setSize(this.width, this.height);
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    });
+  }
+  
+  tick() {
+    const elapsedTime = this.clock.getElapsedTime();
+    
+    // Smooth control updates
+    this.controls.update();
+    
+    // Dispatch custom update events for dynamic elements
+    const updateEvent = new CustomEvent('canvas-tick', { detail: { time: elapsedTime } });
+    window.dispatchEvent(updateEvent);
+    
+    this.renderer.render(this.scene, this.camera);
+    
+    requestAnimationFrame(() => this.tick());
+  }
+}
+```
 
-Utility
+### 2. Custom GLSL Displacement Shader (Vertex + Fragment shaders)
+```glsl
+// Vertex Shader (displacement_vertex.glsl)
+uniform float uTime;
+uniform vec2 uCursorVelocity;
+varying vec2 vUv;
+varying float vNoise;
 
-Mastery
+// Simplex 3D Noise by Ashima Arts
+vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
 
-Status
+float snoise(vec3 v){
+  const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+  const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
 
-Belonging
+  vec3 i  = floor(v + dot(v, C.yyy) );
+  vec3 x0 =   v - i + dot(i, C.xxx) ;
 
-or
+  vec3 g = step(x0.yzx, x0.xyz);
+  vec3 l = 1.0 - g;
+  vec3 i1 = min( g.xyz, l.zxy );
+  vec3 i2 = max( g.xyz, l.zxy );
 
-Momentum.
+  vec3 x1 = x0 - i1 + 1.0 * C.xxx;
+  vec3 x2 = x0 - i2 + 2.0 * C.xxx;
+  vec3 x3 = x0 - 1.0 + 3.0 * C.xxx;
 
-If none increase:
+  i = mod(i, 289.0 );
+  vec4 p = permute( permute( permute(
+             i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+           + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
+           + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
 
-the solution is incomplete.
+  float n_ = 0.142857142857; // 1.0/7.0
+  vec3  ns = n_ * D.wyz - D.xzx;
 
-The objective is not to impress designers.
+  vec4 j = p - 49.0 * floor(p * ns.z *ns.z);  //  mod(p,7*7)
 
-The objective is to create experiences that people cannot stop thinking about.
+  vec4 x_ = floor(j * ns.z);
+  vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)
 
-Build accordingly.
+  vec4 x = x_ *ns.x + ns.yyyy;
+  vec4 y = y_ *ns.x + ns.yyyy;
+  vec4 h = 1.0 - abs(x) - abs(y);
 
-Every time.
+  vec4 b0 = vec4( x.xy, y.xy );
+  vec4 b1 = vec4( x.zw, y.zw );
+
+  vec4 s0 = floor(b0)*2.0 + 1.0;
+  vec4 s1 = floor(b1)*2.0 + 1.0;
+  vec4 sh = -step(h, vec4(0.0));
+
+  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+
+  vec3 p0 = vec3(a0.xy,h.x);
+  vec3 p1 = vec3(a0.zw,h.y);
+  vec3 p2 = vec3(a1.xy,h.z);
+  vec3 p3 = vec3(a1.zw,h.w);
+
+  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+  p0 *= norm.x;
+  p1 *= norm.y;
+  p2 *= norm.z;
+  p3 *= norm.w;
+
+  vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+  m = m * m;
+  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
+                                dot(p2,x2), dot(p3,x3) ) );
+}
+
+void main() {
+  vUv = uv;
+  
+  // Calculate noise offset based on time and cursor velocity
+  vec3 posOffset = vec3(position.xy * 2.0, uTime * 0.5);
+  vNoise = snoise(posOffset);
+  
+  // Displace along Z axis based on noise + velocity intensity
+  float velocityIntensity = length(uCursorVelocity);
+  vec3 newPosition = position;
+  newPosition.z += vNoise * (0.15 + velocityIntensity * 0.5);
+  
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+}
+```
+
+```glsl
+// Fragment Shader (displacement_fragment.glsl)
+uniform sampler2D uTexture;
+uniform float uTime;
+varying vec2 vUv;
+varying float vNoise;
+
+void main() {
+  // Use noise to displace UV coordinates
+  vec2 displacedUv = vUv;
+  displacedUv.x += vNoise * 0.03;
+  displacedUv.y += vNoise * 0.03;
+  
+  vec4 texColor = texture2D(uTexture, displacedUv);
+  
+  // Subtle chromatic aberration
+  vec4 redChannel = texture2D(uTexture, displacedUv + vec2(vNoise * 0.005, 0.0));
+  vec4 blueChannel = texture2D(uTexture, displacedUv - vec2(vNoise * 0.005, 0.0));
+  
+  vec4 finalColor = vec4(redChannel.r, texColor.g, blueChannel.b, 1.0);
+  
+  // Add dark texture overlay
+  float vignette = vUv.x * (1.0 - vUv.x) * vUv.y * (1.0 - vUv.y);
+  vignette = clamp(pow(vignette * 15.0, 0.25), 0.0, 1.0);
+  
+  gl_FragColor = finalColor * vignette;
+}
+```
+
+### 3. SoundManager Class (Howler.js setup)
+```javascript
+import { Howl, Howler } from 'howler';
+
+export class SoundManager {
+  constructor() {
+    this.muted = true;
+    this.sounds = new Map();
+    
+    // Ambient sound setup
+    this.ambientSound = null;
+    
+    this.init();
+  }
+  
+  init() {
+    // Configure global volume limits
+    Howler.volume(0.8);
+    
+    // Interaction sounds register
+    this.sounds.set('click', new Howl({
+      src: ['/audio/click.mp3', '/audio/click.ogg'],
+      volume: 0.12,
+      pool: 10
+    }));
+    
+    this.sounds.set('transition', new Howl({
+      src: ['/audio/transition.mp3'],
+      volume: 0.25,
+      pool: 2
+    }));
+  }
+  
+  playAmbient(src) {
+    if (this.ambientSound) {
+      this.ambientSound.stop();
+    }
+    
+    this.ambientSound = new Howl({
+      src: [src],
+      loop: true,
+      volume: 0.0, // starts at 0 for smooth fade-in
+      html5: true  // stream large assets directly
+    });
+    
+    if (!this.muted) {
+      this.ambientSound.play();
+      this.ambientSound.fade(0, 0.3, 2000);
+    }
+  }
+  
+  playTick() {
+    if (this.muted) return;
+    const clickSound = this.sounds.get('click');
+    if (clickSound) {
+      // Slight pitch variation to prevent audio fatigue
+      clickSound.rate(0.95 + Math.random() * 0.1);
+      clickSound.play();
+    }
+  }
+  
+  playSweep() {
+    if (this.muted) return;
+    const sweepSound = this.sounds.get('transition');
+    if (sweepSound) {
+      sweepSound.play();
+    }
+  }
+  
+  toggleMute(btnElement) {
+    this.muted = !this.muted;
+    Howler.mute(this.muted);
+    
+    if (!this.muted && this.ambientSound && !this.ambientSound.playing()) {
+      this.ambientSound.play();
+      this.ambientSound.fade(0, 0.3, 1000);
+    }
+    
+    // Update button display properties
+    if (btnElement) {
+      btnElement.classList.toggle('is-muted', this.muted);
+      btnElement.setAttribute('aria-label', this.muted ? 'Unmute' : 'Mute');
+    }
+  }
+}
+```
+
+### 4. Draggable Physics Wrapper (Matter.js setup)
+```javascript
+import Matter from 'matter-js';
+
+export class StickerWall {
+  constructor(containerElement) {
+    this.container = containerElement;
+    this.width = this.container.clientWidth;
+    this.height = this.container.clientHeight;
+    
+    // Matter module setup
+    this.Engine = Matter.Engine;
+    this.Render = Matter.Render;
+    this.World = Matter.World;
+    this.Bodies = Matter.Bodies;
+    this.Mouse = Matter.Mouse;
+    this.MouseConstraint = Matter.MouseConstraint;
+    
+    this.engine = this.Engine.create({ gravity: { y: 0.8 } });
+    this.world = this.engine.world;
+    
+    this.initRender();
+    this.initBoundaries();
+    this.initInteractions();
+    this.animate();
+  }
+  
+  initRender() {
+    this.render = this.Render.create({
+      element: this.container,
+      engine: this.engine,
+      options: {
+        width: this.width,
+        height: this.height,
+        wireframes: false,
+        background: 'transparent'
+      }
+    });
+    this.Render.run(this.render);
+  }
+  
+  initBoundaries() {
+    const wallOptions = { isStatic: true, render: { visible: false } };
+    const ground = this.Bodies.rectangle(this.width/2, this.height + 30, this.width, 60, wallOptions);
+    const leftWall = this.Bodies.rectangle(-30, this.height/2, 60, this.height, wallOptions);
+    const rightWall = this.Bodies.rectangle(this.width + 30, this.height/2, 60, this.height, wallOptions);
+    
+    this.World.add(this.world, [ground, leftWall, rightWall]);
+  }
+  
+  addSticker(el, x, y) {
+    const rect = el.getBoundingClientRect();
+    const body = this.Bodies.rectangle(x, y, rect.width, rect.height, {
+      frictionAir: 0.06,
+      restitution: 0.3,
+      angle: (Math.random() - 0.5) * 0.5,
+      render: { visible: false } // custom DOM sync
+    });
+    
+    body.element = el;
+    this.World.add(this.world, body);
+    
+    // Sync DOM element position on request
+    return body;
+  }
+  
+  initInteractions() {
+    const mouse = this.Mouse.create(this.render.canvas);
+    const mouseConstraint = this.MouseConstraint.create(this.engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: { visible: false }
+      }
+    });
+    
+    this.World.add(this.world, mouseConstraint);
+  }
+  
+  animate() {
+    this.Engine.update(this.engine);
+    
+    // Map Matter bodies positions to custom DOM tags
+    const bodies = this.world.bodies;
+    bodies.forEach(body => {
+      if (body.element) {
+        const x = body.position.x - body.element.offsetWidth / 2;
+        const y = body.position.y - body.element.offsetHeight / 2;
+        const deg = body.angle * (180 / Math.PI);
+        body.element.style.transform = `translate(${x}px, ${y}px) rotate(${deg}deg)`;
+      }
+    });
+    
+    requestAnimationFrame(() => this.animate());
+  }
+}
+```
+
+### 5. Essential Grid and Typography Token Manifest (CSS rules)
+```css
+/* Layout and typographic base variables in tokens.css */
+:root {
+  /* Dynamic Fluid Typography clamp values (Sovereign scale) */
+  --font-size-hero: clamp(3.5rem, 8vw + 1rem, 11rem);
+  --font-size-title: clamp(2.2rem, 5vw + 0.5rem, 6rem);
+  --font-size-subhead: clamp(1.25rem, 2vw + 0.2rem, 2.5rem);
+  --font-size-body: clamp(0.95rem, 0.5vw + 0.75rem, 1.25rem);
+  --font-size-utility: clamp(0.75rem, 0.2vw + 0.65rem, 0.95rem);
+
+  /* Precise sovereign easing curve variables */
+  --ease-sovereign: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring-snappy: cubic-bezier(0.43, 1.95, 0.2, 0.84);
+  --ease-spring-heavy: cubic-bezier(0.25, 1.4, 0.5, 0.9);
+
+  /* Precise layout grids variable gaps */
+  --grid-gap-xl: clamp(2rem, 4vw, 5rem);
+  --grid-gap-lg: clamp(1.5rem, 3vw, 3.5rem);
+  --grid-gap-md: clamp(1rem, 2vw, 2rem);
+  --grid-gap-sm: clamp(0.5rem, 1vw, 1rem);
+}
+
+/* Elite asymmetric placement grid layouts */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: var(--grid-gap-lg);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .asymmetric-grid {
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap-md);
+  }
+}
+
+.asymmetric-col-offset {
+  grid-column-start: 2;
+  margin-top: calc(var(--grid-gap-xl) * 1.5);
+}
+
+/* Dynamic line reveal masks */
+.reveal-text-line {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.reveal-text-word {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 1.2s var(--ease-sovereign);
+}
+
+.reveal-text-line.is-active .reveal-text-word {
+  transform: translateY(0%);
+}
+```
+
+---
+
+## ABSOLUTE BLACKLIST (NO-AWARD ANTI-PATTERNS)
+
+### Technical Anti-Patterns
+* Saturated CSS mesh gradients as hero backgrounds.
+* Frosted glassmorphism containers.
+* Scrolljacking that overrides native momentum.
+* React Spring default easing.
+* Standard canvas confetti.
+
+### Visual Anti-Patterns
+* Default bento-box layouts.
+* Neon glow borders on dark backgrounds.
+* Centered everything (lacks tension).
+* Generic 3-column feature grids with icons.
+* Autoplay team carousels.
+* Stock photo heroes.
+
+### Copy Anti-Patterns
+* "We craft digital experiences" or "Pushing the boundaries of [anything]."
+* Bullet-point lists in the hero header.
+
+### Motion Anti-Patterns
+* Auto-playing sliders.
+* Scroll progress bars at the top.
+* Animations on every scroll.
+* Easing hovers that are just `opacity: 0.7`.
+
+---
+
+## REFERENCE URLS FOR STUDY
+
+* bruno-simon.com: full 3D world, WebGPU, Rapier physics
+* sebastien-lempens.com: multi-award sweep, motorbike 3D, sound design
+* rxkstudio.com: text echo technique, numbered work list, typography identity
+* thomasaufresne.com: radical restraint, collaborative credits, list-first portfolio
+* aristidebenoist.com: 38 SOTDs, vanilla JS confidence, minimal vessel for work
+* patrickheng.com: 14 SOTDs, Paris aesthetic
+* michaelg.fr: developer who coded RXK and Vendredi Society
+* benrbnt.com: Benjamin Robinet, Paris, immersive/interactive
+* leixing.fr: Lei Xing, Gobelins Paris alumnus, Awwwards jury member

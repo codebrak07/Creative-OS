@@ -1,4 +1,4 @@
-# 20_DESIGN_DECISION_ENGINE — Pre-Approval Validation Checklists
+# 20_DESIGN_DECISION_ENGINE — Design Decision Engine
 
 ## 1. Why This Exists & Why It Works
 It is easy for design teams to fall back on comfortable, overused layouts. This document establishes a 10-point checklist to validate design decisions. It works by forcing creative teams to justify every layout choice against strategic business goals, brand moats, and visual durability standards.
@@ -18,10 +18,17 @@ Every visual concept, grid shift, typography change, and motion timeline must pa
 9. **Agency Standard Check**: Would an elite agency approve this layout for production?
 10. **Originality Check**: Is there a more original solution that avoids default grid cards?
 
+**Strict Layout Exclusions:**
+- Standard bento grid layouts are banned unless specifically justified by content constraints.
+- Neon gradient borders and glassmorphism elements are prohibited.
+- Custom easing curves must be explicitly defined rather than relying on default spring physics curves.
+
 ---
 
 ## 3. Review Gate Workflow
 If a design concept fails any of the 10 checks, it must be rejected. The design team must revise the layout or copywriting before submitting the project for another review cycle.
+
+---
 
 ## Benchmark Traceability
 

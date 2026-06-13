@@ -1,0 +1,892 @@
+# CLAUDE CODE SPECIALIST EXECUTION RULES
+
+This file defines the execution constraints, tool behaviors, workspace guidelines, and specialist workflows for Claude Code. It serves to align Claude Code agentic operations with the Master Creative OS Brain.
+
+***
+
+## 1. OVERVIEW AND MISSION
+
+Claude Code is an elite creative developer specialist. Your mission is to write clean, high-performance, and visually stunning code that implements the high-concept design tokens and visual principles of the Creative OS.
+
+### Integration with the Master Brain
+All creative, design, typography, color, motion, and interaction decisions are governed by the master reasoning stack defined in:
+* [Master Brain](file:///Users/brak/Desktop/help%20ide/creative-os/.antigravityrules)
+
+You MUST load, read, and reference `.antigravityrules` before making design decisions, writing code, or proposing layout architectures.
+
+***
+
+## 2. CONTEXT MANAGEMENT SYSTEMS
+
+Claude Code must maintain perfect situational awareness of the workspace before reading or editing files.
+
+### 2.1: Zero Assumptions Protocol
+* Never assume the presence of variables, stylesheets, methods, or files in the workspace.
+* Locate and trace all imports: e.g. when editing a file that imports a component or helper, open and read that helper's source code first to verify method signatures.
+* Prioritize reading the design manifest files to prevent mismatching properties:
+  * [tokens.css](file:///Users/brak/Desktop/help%20ide/creative-os/tokens/tokens.css)
+  * [tokens.js](file:///Users/brak/Desktop/help%20ide/creative-os/tokens/tokens.js)
+  * [35_DESIGN_TOKENS.json](file:///Users/brak/Desktop/help%20ide/creative-os/tokens/35_DESIGN_TOKENS.json)
+
+### 2.2: Active Document and Editor Buffer Audit
+* Review all open files and active documents supplied in the metadata.
+* Pay close attention to active cursor coordinates and current active editor focus. Use this to determine the exact scope of the user's intent.
+* If files are open in tabs, assume they are relevant to the layout flow and verify how they communicate.
+
+### 2.3: Dependency Tracing Methodology
+* Tracing imports: For every file you modify, trace the import tree upwards to see how the module is instantiated, and downwards to see what utilities it consumes.
+* CSS class registration: When writing JSX/HTML, verify class names in tokens.css or component-level files before compiling.
+* Keep a list of all files that you intend to read or modify, updating this list dynamically as dependencies are discovered.
+
+***
+
+## 3. PLANNING WORKFLOWS
+
+When a user request requires substantial changes (multiple files, new features, or architectural adjustments), stop and construct a plan.
+
+### 3.1: Research Phase
+* Conduct research using non-destructive search tools (ripgrep, folder listings).
+* Identify all modules, tokens, shaders, or files that need to be read or modified.
+* Do not make any changes to files or run compilation/testing scripts during this phase.
+
+### 3.2: Detailed Implementation Plan Template
+Write or update `implementation_plan.md` in the App Data Directory using the following structure:
+```markdown
+# [Goal Description]
+Provide a brief description of the problem, any background context, and what the change accomplishes.
+
+## User Review Required
+Document anything that requires user review or feedback, for example, breaking changes or significant design decisions. Use GitHub alerts (IMPORTANT/WARNING/CAUTION) to highlight critical items.
+
+## Open Questions
+Clarifying or design questions for the user that will impact the implementation plan.
+
+## Proposed Changes
+Group files by component and order logically.
+### [Component Name]
+#### [MODIFY] [file basename](file:///absolute/path/to/modifiedfile)
+#### [NEW] [file basename](file:///absolute/path/to/newfile)
+#### [DELETE] [file basename](file:///absolute/path/to/deletedfile)
+
+## Verification Plan
+Summary of how you will verify that your changes have the desired effects.
+### Automated Tests
+- Commands to run.
+### Manual Verification
+- Steps to test the UI or visual interactions.
+```
+
+### 3.3: User Approval Gate
+* Set `request_feedback = true` in the plan metadata.
+* Stop and wait for the user's explicit approval before proceeding.
+
+### 3.4: Task Checklist Template
+Create `task.md` in the App Data Directory using the following format:
+```markdown
+- `[ ]` uncompleted tasks
+- `[/]` in progress tasks
+- `[x]` completed tasks
+```
+* Update the checklist continuously in real-time as files are created, edited, and verified.
+
+***
+
+## 4. REPOSITORY NAVIGATION AND DISCOVERY
+
+Use search tools intentionally to map the layout of the project.
+
+### 4.1: Focused Ripgrep Search
+* Use grep_search with specific query terms. Avoid generic searches that return many results.
+* Use the Includes parameter to filter by file type (such as `*.css`, `*.js`, `*.md`) to isolate design tokens from components.
+
+### 4.2: Directory Analysis
+* Use directory listings to inspect folder structures when directories are created or moved.
+* Do not scan the entire filesystem directory tree recursively unless necessary. Focus on the target subdirectory first.
+
+### 4.3: Symbol and Import Mapping
+* Verify that import statements use correct relative paths, for example: `import { SoundManager } from '../libraries/SoundManager.js'`.
+* Check if files use ES module syntax (import/export) or CommonJS syntax (require/module.exports). Do not mix them.
+
+***
+
+## 5. CLAUDE CODE WORKFLOWS
+
+Optimize tool calls for speed, precision, and zero-disruption execution.
+
+### 5.1: Command Layout Coordination
+* When editing multiple files, structure your modifications sequentially.
+* Modify dependencies (data layers, tokens, utilities) first, and layout/view components second.
+
+### 5.2: Terminal Commands Rules
+* Propose terminal commands transparently.
+* Ensure the command is executed from the correct working directory (`Cwd`). The `Cwd` must be within the user's workspace.
+* Do not run long-running development servers (`npm run dev`) in blocking mode without setting a timeout or running in the background.
+* Limit command output pages by piping into head or utilizing limiting arguments.
+
+### 5.3: Handling Terminal Permissions and Warnings
+* If a terminal task fails due to permissions, identify the target and request the narrowest scope permission.
+* Do not use sudo or run arbitrary network scripts unless approved.
+
+***
+
+## 6. REFACTOR AND CODE MODIFICATION SYSTEMS
+
+Code modifications must preserve existing code quality, style guidelines, and documentation metadata.
+
+### 6.1: Precise Code Replacement
+* Use replace_file_content for single contiguous block edits.
+* Specify StartLine and EndLine parameters accurately. Target the exact line numbers where the edit should occur.
+* Target content must match the file content exactly, including spaces and indentations.
+
+### 6.2: Non-Contiguous File Edits
+* Use multi_replace_file_content when making multiple separate updates in a single file.
+* Specify each update as a separate chunk with its own StartLine, EndLine, and unique TargetContent.
+* Do not attempt to replace the entire file content with new code if you are only editing a few lines.
+
+### 6.3: Code Quality Preservation
+* Keep all comments, docstrings, and inline documentations that are unrelated to your edits.
+* Do not delete utility methods, exports, or variables to clean up unless requested.
+* Keep variable declarations grouped at the top of functions or files.
+
+### 6.4: Zero Placeholders
+* Do not leave `// TODO` or `/* Implement later */` comments.
+* Write full, production-ready code with complete logic, variables, and error handling.
+
+***
+
+## 7. CODE REVIEW AND CRITIQUE SYSTEMS
+
+Perform self-reviews on all changes before marking tasks as completed.
+
+### 7.1: Visual Integrity Review
+* Evaluate layout adjustments against the Composition Engine (asymmetry, offsets, negative space) in `.antigravityrules`.
+* Ensure that no bento box grids, saturated gradients, or centered layouts are introduced (Absolute Blacklist violations).
+
+### 7.2: Performance Audit
+* Verify that animations do not trigger layout thrashing. Avoid updating DOM properties like offsetWidth or offsetHeight inside animation requestAnimationFrame loops.
+* Check that GSAP animations use hardware-accelerated transforms (x, y, rotation, scale) instead of standard layout variables (left, top, width, height).
+* Verify that ScrollTrigger elements are properly killed and cleaned up when components unmount to prevent memory leaks.
+
+### 7.3: HSL Color Verification
+* Ensure all styling references use HSL coordinates defined in the design tokens: e.g. using `hsl(var(COLOR_INK_HUE), var(COLOR_INK_SAT), var(COLOR_INK_LIGHT))` where variables match tokens.
+* Do not write hardcoded hex values or standard CSS color names.
+
+***
+
+## 8. DEBUG AND TROUBLESHOOTING SYSTEMS
+
+When testing or debugging, follow a scientific, structured process.
+
+### 8.1: WebGL/Three.js Debugging
+* Shaders compilation: Check for compilation warnings in GLSL code blocks. Verify uniform and varying bindings match.
+* Check renderer capabilities: Verify that WebGPURenderer fallbacks to WebGLRenderer when WebGPU is unavailable.
+* Check geometry disposals: Verify that geometries and materials are properly disposed of when Three.js objects are removed:
+  ```javascript
+  geometry.dispose();
+  material.dispose();
+  ```
+
+### 8.2: Sound and Interaction Troubleshooting
+* Check for user interaction policies: Verify that audio does not play before the user clicks on the screen.
+* Verify sound sprites coordinates: Ensure that start times and durations in the sound sprite manifest map correctly to the asset source.
+
+### 8.3: Local Workspace Validations
+* Run `python3 verify_traceability.py` after editing any markdown files to verify compliance.
+* If errors occur, analyze the line numbers and edit the file to fix the tags or structure.
+
+***
+
+## 9. ARCHITECTURE AND SYSTEM RULES
+
+Follow the established folder structure and naming conventions.
+
+### 9.1: Directory Layout
+* `/creative-os/tokens/`: Contains design tokens JSON, CSS, and JS exports.
+* `/creative-os/design/`: Typography systems, color systems, and catalogues.
+* `/creative-os/motion/`: Motion systems, scroll story details, and animation libraries.
+* `/creative-os/interaction/`: Pointer events, dragging loops, gestures, and audio.
+* `/creative-os/architecture/`: Structure guidelines, layout grids, components, WebGL systems, and preloaders.
+* `/creative-os/strategy/`: Narrative arcs, experience architectures, conversion paths, and brand strategy.
+
+### 9.2: Coding Standards
+* Variable fonts: Preload variable font assets and use clamp functions for scaling.
+* Lenis Scroll: Bind Lenis scroll events to GSAP ScrollTrigger updates:
+  ```javascript
+  lenis.on('scroll', ScrollTrigger.update);
+  ```
+* Spring Physics: Bind spring coordinates to pointer positions with a lerp interpolation factor.
+
+***
+
+## 10. CREATIVE OS INTEGRATION
+
+All code written by Claude Code must integrate seamlessly with the Master Brain principles.
+
+### Integration Checklist
+* [ ] Does the site use the HSL color palette (obsidian-first background, warm ivory ink)?
+* [ ] Is there exactly one accent color registered?
+* [ ] Is the primary typography pairing selected from the FONT_PAIRING_CATALOGUE?
+* [ ] Does the entry use a designed loading preloader rather than a generic spinner?
+* [ ] Is audio feedback implemented using Howler.js for interactive controls?
+* [ ] Are scroll actions governed by Lenis Scroll and animated via GSAP?
+* [ ] Does the page implement a custom cursor that distorts based on mouse velocity?
+* [ ] Do draggable items use spring physics?
+
+If any check fails, align the code with the Master Brain rules before presenting to the user.
+
+***
+
+## 11. CLAUDE CODE TRACEABILITY AND VALIDATION ROUTINES
+
+Every code change must satisfy the traceability rules verified by `verify_traceability.py`.
+
+### Rule 11.1: Evidence Tags Mappings
+* When modifying or creating rules in markdown files, append the correct evidence tag to the rule line.
+* Allowed tags:
+  * `[DIRECT]`: Direct citation from project files.
+  * `[INFERRED]`: Inferred principle based on code analysis.
+  * `[SECONDARY]`: Reference to industry standards or secondary documentation.
+  * `[ASSUMED]`: Assumed design decisions.
+* Use Bureau Borsche rules with `[SECONDARY]` only.
+
+### Rule 11.2: Validation Checks Execution
+* Before finalizing a task, run:
+  ```bash
+  python3 verify_traceability.py
+  ```
+* Review the output. If the script fails, trace the validation errors to the target markdown files, correct the tags or structure, and rerun.
+* Ensure coverage remains at 100%.
+
+***
+
+## 12. NO EM DASH FORMATTING CONSTRAINT
+
+* Do not write em dashes (such as unicode em-dash or double-hyphen in text) in any workspace rules, code files, or modified markdown files.
+* Use hyphens or colons instead.
+* Example of violation: `For the best experience - Turn your sound on` (where a double-hyphen or em-dash was used in text).
+* Correct form: `For the best experience: Turn your sound on`
+
+***
+
+## 13. INTERPRETING CREATIVE OS ENGINES IN CODE
+
+When implementing code, translating the abstract engines into concrete code patterns is required:
+
+### 13.1: Experience Design and Experience Engine
+* HOOK: Capture attention using visual displacement or dramatic entry transitions in the first 3 seconds.
+* DISCOVERY: Hide navigation details behind interactive gestures or cursor proximity triggers.
+* PROGRESSION: Bind section shifts to scroll timeline parameters using GSAP.
+* REWARD: Trigger audio feedback ticks and visual spring scales on hover.
+* MASTERY: Allow users to drag elements, customize interface layouts, or control WebGL meshes.
+* MEMORY: Generate unique layout layouts using noise distributions so that no two views look identical.
+
+### 13.2: Design Psychology Engine
+Translate authority signals to typographic parameters:
+* Editorial Serif: Use for narrative storytelling sections.
+* Monospace: Use for metrics, indices, structural grid layouts, and credits.
+* Neo-Grotesk: Use for user controls, body content, and navigation links.
+
+### 13.3: Emotion Engine
+Align colors, spring constants, and audio pitches to the selected emotion:
+* Wonder: High restitution bounces, chime sound effects, light pastel colors.
+* Tension: Slow linear interpolation speeds (lerp 0.02), low frequency drone sounds, deep dark layout shades.
+* Playfulness: Fast snappy springs, clicky sound sprites, random position offsets.
+
+### 13.4: Storytelling System and Story Engine
+Design page transitions as chapters:
+```javascript
+export class ChapterController {
+  constructor(chapters) {
+    this.chapters = chapters;
+    this.current = 0;
+  }
+  
+  transitionTo(index) {
+    const fromEl = this.chapters[this.current];
+    const toEl = this.chapters[index];
+    
+    const tl = gsap.timeline();
+    tl.to(fromEl, { opacity: 0, scale: 0.95, duration: 0.6 })
+      .to(toEl, { opacity: 1, scale: 1, duration: 0.8 }, '-=0.2');
+      
+    this.current = index;
+  }
+}
+```
+
+### 13.5: World Building Engine
+Instantiate a 3D environment using coordinates, gravity settings, and camera limits to frame the layout:
+```javascript
+export function initWorldPhysics(scene, world) {
+  world.gravity = { x: 0, y: -9.81, z: 0 };
+  
+  const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(100, 100),
+    new THREE.MeshBasicMaterial({ color: 0x000000, visible: false })
+  );
+  floor.rotation.x = -Math.PI / 2;
+  scene.add(floor);
+}
+```
+
+***
+
+## 14. CODE TEMPLATES AND WORKSPACE RECIPES
+
+To ensure 100% capability inside Claude Code, study the following concrete code architectures for each motion pattern.
+
+### Recipe 1: Text Echo Animation (GSAP)
+```javascript
+export function initEchoText(elementSelector) {
+  const elements = document.querySelectorAll(elementSelector);
+  
+  elements.forEach((el) => {
+    const text = el.textContent;
+    el.setAttribute('data-text', text);
+    el.classList.add('echo-text');
+    
+    const tl = gsap.timeline({ paused: true });
+    
+    // Animate offset properties
+    tl.to(el, {
+      duration: 0.6,
+      ease: 'power3.out'
+    });
+    
+    el.addEventListener('mouseenter', () => tl.play());
+    el.addEventListener('mouseleave', () => tl.reverse());
+  });
+}
+```
+
+### Recipe 2: Velocity-Based Cursor Setup
+```javascript
+export class VelocityCursor {
+  constructor(cursorElement) {
+    this.el = cursorElement;
+    this.pos = { x: 0, y: 0 };
+    this.target = { x: 0, y: 0 };
+    this.last = { x: 0, y: 0 };
+    this.vel = 0;
+    
+    this.init();
+  }
+  
+  init() {
+    window.addEventListener('mousemove', (e) => {
+      this.target.x = e.clientX;
+      this.target.y = e.clientY;
+    });
+    
+    this.tick();
+  }
+  
+  tick() {
+    this.pos.x += (this.target.x - this.pos.x) * 0.1;
+    this.pos.y += (this.target.y - this.pos.y) * 0.1;
+    
+    const dx = this.pos.x - this.last.x;
+    const dy = this.pos.y - this.last.y;
+    const speed = Math.sqrt(dx * dx + dy * dy);
+    
+    const intensity = Math.min(speed / 50, 1);
+    const scale = 1 + intensity * 0.8;
+    
+    gsap.set(this.el, {
+      x: this.pos.x,
+      y: this.pos.y,
+      scaleX: scale,
+      scaleY: 1 / scale
+    });
+    
+    this.last.x = this.pos.x;
+    this.last.y = this.pos.y;
+    
+    requestAnimationFrame(() => this.tick());
+  }
+}
+```
+
+### Recipe 3: Designed Preloader Screen (Vite)
+```javascript
+export function initPreloader(onComplete) {
+  const loadScreen = document.querySelector('.load-screen');
+  const counter = document.querySelector('.load-counter');
+  
+  let progress = { value: 0 };
+  
+  gsap.to(progress, {
+    value: 100,
+    duration: 3,
+    ease: 'power2.out',
+    onUpdate: () => {
+      counter.textContent = String(Math.floor(progress.value)).padStart(3, '0');
+    },
+    onComplete: () => {
+      const exitTl = gsap.timeline({
+        onComplete: () => {
+          loadScreen.remove();
+          if (onComplete) onComplete();
+        }
+      });
+      
+      exitTl.to(loadScreen, {
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.inOut'
+      });
+    }
+  });
+}
+```
+
+### Recipe 4: Three.js Custom Shader Integration
+```javascript
+import * as THREE from 'three';
+
+export function createShaderPlane(textureUrl) {
+  const loader = new THREE.TextureLoader();
+  const texture = loader.load(textureUrl);
+  
+  const geometry = new THREE.PlaneGeometry(2, 2, 32, 32);
+  const material = new THREE.ShaderMaterial({
+    uniforms: {
+      uTexture: { value: texture },
+      uTime: { value: 0 },
+      uCursorVelocity: { value: new THREE.Vector2(0, 0) }
+    },
+    vertexShader: `
+      uniform float uTime;
+      uniform vec2 uCursorVelocity;
+      varying vec2 vUv;
+      
+      void main() {
+        vUv = uv;
+        vec3 pos = position;
+        float dist = length(uCursorVelocity);
+        pos.z += sin(uv.x * 10.0 + uTime) * (0.05 + dist * 0.2);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform sampler2D uTexture;
+      varying vec2 vUv;
+      
+      void main() {
+        vec4 color = texture2D(uTexture, vUv);
+        gl_FragColor = color;
+      }
+    `
+  });
+  
+  return new THREE.Mesh(geometry, material);
+}
+```
+
+### Recipe 5: Scroll-Triggered Color Shift
+```javascript
+export function initScrollColorShift(containerElement) {
+  const sections = [
+    { hue: 220, sat: 12, light: 6 },
+    { hue: 24,  sat: 15, light: 8 },
+    { hue: 200, sat: 20, light: 7 }
+  ];
+  
+  const items = containerElement.querySelectorAll('.color-section');
+  
+  items.forEach((item, index) => {
+    if (index >= sections.length - 1) return;
+    
+    const nextSection = sections[index + 1];
+    const currentSection = sections[index];
+    
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const h = gsap.utils.interpolate(currentSection.hue, nextSection.hue, progress);
+          const s = gsap.utils.interpolate(currentSection.sat, nextSection.sat, progress);
+          const l = gsap.utils.interpolate(currentSection.light, nextSection.light, progress);
+          
+          // Apply custom canvas styling
+          document.documentElement.style.setProperty(
+            'color-canvas',
+            `hsl(${h}, ${s}%, ${l}%)`
+          );
+        }
+      }
+    });
+  });
+}
+```
+
+***
+
+## 15. LESSONS FROM THE BEST FRENCH DEVELOPERS (Full Reference)
+
+### Bruno Simon Portfolio Breakdown
+* World Architecture: Built entirely inside a WebGL viewport container. Static content is layered programmatically inside canvas bounding coordinates.
+* Physics Integration: Objects fall, bounce, slide, and react to cursor collisions. Restitution parameters are set at 0.45.
+* Resource Loader: Preloads all GLTF meshes dynamically, displaying percentage text updates.
+
+### Sebastien Lempens Immersive Architecture
+* Sound Sprites: Coordinates clicks, sweeps, and background loops inside a central sound configuration object.
+* Entry Timeline: Plays ambient tracks only when the user clicks the mute toggle to dismiss the loader screen.
+* Typography Constraints: Headings are styled in uppercase with tight letter-spacing.
+
+### RXK Studio Repeatable Techniques
+* Echo Text: Custom hover effect that duplicates display headlines and animates offsets.
+* Zero-Padding Lists: Numbers list entries with double digits (such as 01, 02, 03) in monospace fonts.
+* Border Styling: Flat grids featuring subtle 1px border lines and absolute zero spacing padding coordinates.
+
+### Thomas Aufresne Restraint Standards
+* Typography Layout: Layout hierarchy is set using font size variations instead of color or decorative images.
+* Background Styling: Restricted to solid obsidian or beige surfaces with thin layouts.
+* Navigation: Small utility tags arranged in asymmetrical columns.
+
+### Aristide Benoist Interaction Standards
+* Lerp Loops: Cursor coordinates update inside a requestAnimationFrame tick with a 0.08 damping coefficient.
+* Frame Rate Constraints: Animations check for frame drops and adjust render scales if frames drop below 50fps.
+* Vanilla JS Setup: Rejects heavy framework loaders in favor of lightweight vanilla elements to maintain 100ms response latencies.
+
+***
+
+## 16. EXHAUSTIVE DEBUG CHECKLISTS FOR RENDERING AND AUDIO
+
+### 16.1: WebGL/WebGPU Renderer and Shaders Checklist
+* Uniform Checks: Check that all uniform bindings match exact names between JavaScript variables and GLSL shader code.
+* Asset Loading Checks: Verify texture loading paths are absolute or resolve correctly within the build directories.
+* Canvas Sizing Checks: Check that WebGL canvas sizes are updated inside window resize event listeners.
+* Geometry Disposals: Check that old meshes, geometries, and materials are programmatically deleted when layout scenes switch to prevent GPU memory leaks.
+* WebGPURenderer Fallbacks: Ensure that a fallback helper registers WebGLRenderer if the browser returns that WebGPURenderer is not supported.
+
+### 16.2: Web Audio and Howler.js Interaction Checklist
+* Gesture Locks: Check that no audio loop begins playing before the user triggers a click or keyboard event.
+* Fading Actions: Ensure ambient tracks fade out slowly when section transitions are active.
+* Sound Toggle: Verify that the mute button updates class states and toggles global volume controls.
+* Audio Format Fallbacks: Register audio resources with multiple formats (mp3, ogg, wav) to ensure support across different browsers.
+
+### 16.3: Code Structure and Execution Validation
+* Strict Traceability Checks: Run the local python3 validation script after every markdown edit.
+* Linter Compliance: Check that no compilation warnings exist for unused imports or variables in files.
+* Indentations: Verify formatting rules are followed inside file replacement chunks.
+
+***
+
+## 17. STEP-BY-STEP REFACTORING EXAMPLES
+
+### 17.1: GSAP and ScrollTrigger Refactoring Setup
+When refactoring components that leverage GSAP and ScrollTrigger:
+* Step 1: Initialize the timeline and register the plugins.
+* Step 2: Set up the scroll trigger coordinates (trigger, start, end, scrub).
+* Step 3: Check that coordinates use relative clamp variables rather than hardcoded sizes.
+* Step 4: Write clean cleanup loops inside components unmount lifecycle functions:
+```javascript
+export function registerScrollAnimation(triggerElement, targetElement) {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  const ctx = gsap.context(() => {
+    gsap.to(targetElement, {
+      x: 100,
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  });
+  
+  return () => ctx.revert();
+}
+```
+
+### 17.2: Matter.js Physics Engine Rebuild Workflow
+When refactoring Matter.js loops for sticker walls:
+* Step 1: Create engine and world modules.
+* Step 2: Declare grounds and boundaries matching container dimensions.
+* Step 3: Add objects with slight randomized rotation constants.
+* Step 4: Hook animation tickers, syncing positions back to absolute HTML elements:
+```javascript
+export function rebuildPhysicsEngine(containerElement, items) {
+  const engine = Matter.Engine.create();
+  const world = engine.world;
+  
+  const ground = Matter.Bodies.rectangle(
+    containerElement.clientWidth / 2,
+    containerElement.clientHeight + 10,
+    containerElement.clientWidth,
+    20,
+    { isStatic: true }
+  );
+  Matter.World.add(world, ground);
+  
+  (function update() {
+    Matter.Engine.update(engine);
+    requestAnimationFrame(update);
+  })();
+}
+```
+
+### 17.3: Howler.js Sprite Configuration Setup
+When setting up audio managers inside interactive elements:
+* Step 1: Declare paths and format lists.
+* Step 2: Define exact offset markers in milliseconds inside the sprite property:
+```javascript
+const sound = new Howl({
+  src: ['sounds.mp3'],
+  sprite: {
+    laser: [0, 1000],
+    winner: [2000, 3500]
+  }
+});
+```
+
+***
+
+## 18. COMPLEX INTERACTION DESIGN SPECIFICATIONS
+
+All interactive elements (buttons, nav links, image cards) must follow this detailed interaction specification.
+
+### 18.1: Magnetic Button Interaction (GSAP)
+Implement magnetic hover responses on action buttons:
+* Trigger Zone: Detect mouse movement within 80px radius of the button center.
+* Spring Displacement: Smoothly move the button container towards the mouse coordinates with a damping spring factor of 0.2.
+* Text Lag: Displace the button label text by 30% of the container movement speed.
+* Exit Easing: Return container and label back to original coordinates using elastic ease out with a duration of 0.8s on mouseleave.
+
+### 18.2: Elastic Image Reveal on Hover
+* Initial State: Images are clipped inside a container with scale 1.1 and a displacement noise filter active.
+* Hover State: Animate clip path bounds to expand, scale down the image to 1.0, and reduce displacement intensity to 0.
+* Exit State: Restore initial scale and displacement bounds, showing lag offsets matching cursor velocity.
+* Sound Trigger: Play a low-pitch sweep sound sprite (50ms duration) at volume 0.1 on hover entry.
+
+***
+
+## 19. DETAILED COMPONENT LAYOUT WORKFLOWS
+
+Follow these layouts when building core navigation and page shells.
+
+### 19.1: Responsive Navigation Shell (HTML/CSS)
+```html
+<nav class="sovereign-nav" aria-label="Main Navigation">
+  <div class="nav-brand">
+    <a href="/" class="brand-link" data-text="Creative OS">Creative OS</a>
+  </div>
+  <div class="nav-links">
+    <div class="nav-item reveal-text-line">
+      <a href="/work" class="nav-anchor reveal-text-word">Work</a>
+    </div>
+    <div class="nav-item reveal-text-line">
+      <a href="/about" class="nav-anchor reveal-text-word">About</a>
+    </div>
+  </div>
+  <div class="nav-controls">
+    <button class="sound-toggle" aria-label="Toggle Mute" aria-pressed="false">
+      <span class="sound-icon" aria-hidden="true">Audio</span>
+    </button>
+  </div>
+</nav>
+```
+
+```css
+.sovereign-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(GRID_GAP_MD) var(GRID_GAP_LG);
+  z-index: 100;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.brand-link {
+  font-family: var(FONT_SERIF);
+  font-size: var(FONT_SIZE_SUBHEAD);
+  font-weight: 700;
+  color: hsl(var(COLOR_INK_HUE), var(COLOR_INK_SAT), var(COLOR_INK_LIGHT));
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(GRID_GAP_MD);
+}
+
+.nav-anchor {
+  font-family: var(FONT_SANS);
+  font-size: var(FONT_SIZE_UTILITY);
+  color: hsl(var(COLOR_INK_HUE), var(COLOR_INK_SAT), var(COLOR_INK_LIGHT));
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+```
+
+### 19.2: Canvas Preloading Vessel Layout
+```html
+<div class="load-screen" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+  <div class="load-screen-content">
+    <div class="load-awards" aria-label="Awards Badges">
+      <div class="award-badge" data-award="sotd">SOTD</div>
+      <div class="award-badge" data-award="fwa">FWA</div>
+    </div>
+    <div class="load-counter-container">
+      <span class="load-counter">000</span>
+    </div>
+    <div class="load-hint-container">
+      <p class="load-hint">For the best experience: Turn your sound on</p>
+    </div>
+  </div>
+</div>
+```
+
+```css
+.load-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0a0a0a;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(GRID_GAP_LG);
+}
+
+.load-counter {
+  font-family: var(FONT_MONO);
+  font-size: clamp(4rem, 10vw, 15rem);
+  font-weight: 300;
+  color: #e8e6e3;
+  line-height: 1;
+}
+
+.load-hint {
+  font-family: var(FONT_SANS);
+  font-size: var(FONT_SIZE_UTILITY);
+  color: #e8e6e3;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+```
+
+***
+
+## 20. DESIGN TOKENS CATALOG AND STRUCTURE EXAMPLES
+
+Ensure all code elements sync perfectly with the layout parameters specified in `35_DESIGN_TOKENS.json`:
+
+### 20.1: Typographic Tokens Manifest
+* Typeface names:
+  * Serif: Sovereign Display
+  * Sans: Suisse Intl
+  * Mono: NB Architekt
+* Font Weights:
+  * Light: 300
+  * Regular: 400
+  * Bold: 700
+* Leading ratios:
+  * Hero: 0.9
+  * Title: 1.05
+  * Body: 1.5
+
+### 20.2: Color Palette Mapping
+* Canvas background: HSL(220, 12%, 6%) (obsidian)
+* Ink color: HSL(24, 15%, 85%) (warm ivory)
+* Accent shade: HSL(12, 85%, 50%) (red accent)
+* Surface bounds: HSL(220, 10%, 12%) (surface container)
+* Contrast ratios must remain above 4.5:1 for accessibility utility.
+
+***
+
+## 21. TRACEABILITY AUDIT FOR CLAUDE CODE DEVELOPERS
+
+Every time you modify the codebase:
+* Trace file references: Verify that all markdown links within files are updated if target paths change.
+* Verify benchmark dependencies: Refer to [24_WORLD_CLASS_BENCHMARKS](file:///Users/brak/Desktop/help%20ide/creative-os/libraries/24_WORLD_CLASS_BENCHMARKS.md) to check if your styling patterns align with locomotive, active_theory, resn, or bureau_borsche.
+* Run tests: Make sure to execute standard terminal validation tasks before delivering.
+* No changes are considered complete until the traceability report shows 100% success.
+* Maintain clean diff boundaries when modifying files. Avoid changing spacing or imports outside modified blocks.
+
+***
+
+## 22. ADVANCED SCROLL-DRIVEN MOTION SEQUENCES (GSAP and Lenis)
+
+Detailed instructions for implementing multi-stage scroll storytelling:
+
+### 22.1: Horizontal Showcase Scroll Setup
+Coordinate horizontal panning container pinned relative to the viewport:
+```javascript
+export function initHorizontalScroll(containerSelector, triggerSelector) {
+  const container = document.querySelector(containerSelector);
+  const trigger = document.querySelector(triggerSelector);
+  
+  const scrollWidth = container.scrollWidth - window.innerWidth;
+  
+  gsap.to(container, {
+    x: -scrollWidth,
+    ease: "none",
+    scrollTrigger: {
+      trigger: trigger,
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      end: () => `+=${scrollWidth}`,
+      invalidateOnRefresh: true
+    }
+  });
+}
+```
+
+### 22.2: Sticky Narrative Layout
+* Pin copy cards on the left viewport column while images scroll on the right.
+* Unpin only when the last slide reaches a scroll offset of 90% viewport height.
+
+***
+
+## 23. ACCELERATED GRAPHICS OPTIMIZATION CHECKLIST
+
+Maintain optimal performance (60fps target) using this hardware rendering manifest.
+
+### 23.1: GPU Execution Optimization
+* Layer Promotion: Apply will-change transform or transform translate3d only to active elements. Remove when animations terminate to prevent GPU memory depletion.
+* Pixel Density Limits: Cap WebGL renderer pixel ratio:
+  ```javascript
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  ```
+  Never exceed a pixel ratio of 2.0 to protect mobile and integrated graphics.
+* Shader Uniform Updates: Group uniforms and update them only when attributes change. Avoid redundant uniform assignments inside the render ticker.
+
+### 23.2: Asset and Asset Size Limits
+* Texture Atlases: Combine multiple icon images into a single texture atlas file. Use UV offset mapping to render icons in Three.js meshes.
+* Mesh Simplification: Keep 3D model polygon counts under 50,000 vertices per scene. Run Draco compression on GLB files before preloading.
+
+***
+
+## 24. WORKSPACE DIRECTORY AND FILE MAPPING PROTOCOL
+
+All systems load dependencies in order. Reference the manifest below to coordinate module imports:
+* DESIGN_OS: Core token stylesheet definitions.
+* MOTION_SYSTEM: Animation physics properties. Requires DESIGN_OS to be parsed first.
+* CREATIVE_TECH_SYSTEM: WebGL canvases and Rapier WASM bindings. Requires MOTION_SYSTEM.
+* STORYTELLING_SYSTEM: Narrative layouts and page routing structures. Requires DESIGN_OS and TYPOGRAPHY_SYSTEM.

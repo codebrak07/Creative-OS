@@ -1,0 +1,8 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-transition);
+  background-color: var(--color-canvas-cool);
+  pointer-events: none;
+  will-change: transform;
+}

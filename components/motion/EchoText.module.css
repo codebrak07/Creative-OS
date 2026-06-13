@@ -1,0 +1,59 @@
+.echoTrigger {
+  position: relative;
+  display: inline-block;
+  cursor: none;
+}
+
+.frontText {
+  position: relative;
+  z-index: 3;
+  transition: transform var(--dur-base) var(--ease-sovereign);
+  display: inline-block;
+}
+
+.echoTrigger:hover .frontText {
+  transform: skewX(var(--skew-amount));
+}
+
+.echoElement {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition:
+    transform var(--dur-slow) var(--ease-sovereign),
+    opacity var(--dur-slow) var(--ease-out);
+  color: var(--color-accent);
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.echo1 {
+  z-index: 2;
+  opacity: 0;
+}
+
+.echo2 {
+  z-index: 1;
+  opacity: 0;
+}
+
+.echoTrigger:hover .echo1 {
+  opacity: 0.35;
+  transform: translate(var(--divergence-1), calc(-1 * var(--divergence-1))) skewX(var(--skew-amount));
+}
+
+.echoTrigger:hover .echo2 {
+  opacity: 0.15;
+  transform: translate(var(--divergence-2), calc(-1 * var(--divergence-2))) skewX(var(--skew-amount));
+}
+
+@media (hover: none) {
+  .echoElement {
+    display: none;
+  }
+  .frontText {
+    transform: none !important;
+  }
+}

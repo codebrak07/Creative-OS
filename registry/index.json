@@ -1,0 +1,146 @@
+{
+  "design_os": {
+    "path": "design/01_DESIGN_OS.md",
+    "tags": ["design", "layout", "visual"]
+  },
+  "art_direction": {
+    "path": "design/02_ART_DIRECTION.md",
+    "tags": ["design", "art-direction", "visual"]
+  },
+  "visual_rules": {
+    "path": "design/03_VISUAL_RULES.md",
+    "tags": ["design", "rules", "grid", "spacing"]
+  },
+  "typography_system": {
+    "path": "design/04_TYPOGRAPHY_SYSTEM.md",
+    "tags": ["design", "typography", "fonts"]
+  },
+  "color_system": {
+    "path": "design/10_COLOR_SYSTEM.md",
+    "tags": ["design", "color", "hsl", "contrast"]
+  },
+  "design_anti_patterns": {
+    "path": "design/14_DESIGN_ANTI_PATTERNS.md",
+    "tags": ["design", "blacklist", "anti-patterns"]
+  },
+  "motion_system": {
+    "path": "motion/05_MOTION_SYSTEM.md",
+    "tags": ["motion", "animation", "gsap"]
+  },
+  "animation_library": {
+    "path": "motion/26_ANIMATION_LIBRARY.md",
+    "tags": ["motion", "presets", "framer-motion"]
+  },
+  "scroll_story_library": {
+    "path": "motion/27_SCROLL_STORY_LIBRARY.md",
+    "tags": ["motion", "scroll", "choreography"]
+  },
+  "storytelling_system": {
+    "path": "strategy/07_STORYTELLING_SYSTEM.md",
+    "tags": ["strategy", "storytelling", "copywriting"]
+  },
+  "brand_strategy_os": {
+    "path": "strategy/15_BRAND_STRATEGY_OS.md",
+    "tags": ["strategy", "brand", "archetypes"]
+  },
+  "information_architecture": {
+    "path": "strategy/16_INFORMATION_ARCHITECTURE.md",
+    "tags": ["strategy", "navigation", "menus"]
+  },
+  "conversion_architecture": {
+    "path": "strategy/17_CONVERSION_ARCHITECTURE.md",
+    "tags": ["strategy", "conversion", "cta"]
+  },
+  "premium_perception_system": {
+    "path": "strategy/18_PREMIUM_PERCEPTION_SYSTEM.md",
+    "tags": ["strategy", "premium", "exclusivity"]
+  },
+  "content_design_system": {
+    "path": "strategy/36_CONTENT_DESIGN_SYSTEM.md",
+    "tags": ["strategy", "content", "copywriting"]
+  },
+  "design_research_system": {
+    "path": "strategy/38_DESIGN_RESEARCH_SYSTEM.md",
+    "tags": ["strategy", "research", "audit"]
+  },
+  "business_strategy_system": {
+    "path": "strategy/39_BUSINESS_STRATEGY_SYSTEM.md",
+    "tags": ["strategy", "business", "pricing"]
+  },
+  "experience_architecture": {
+    "path": "strategy/40_EXPERIENCE_ARCHITECTURE_SYSTEM.md",
+    "tags": ["strategy", "experience", "journey"]
+  },
+  "creative_intelligence_system": {
+    "path": "strategy/42_CREATIVE_INTELLIGENCE_SYSTEM.md",
+    "tags": ["strategy", "intelligence", "moats"]
+  },
+  "project_kickoff_system": {
+    "path": "strategy/43_PROJECT_KICKOFF_SYSTEM.md",
+    "tags": ["strategy", "kickoff", "workshop"]
+  },
+  "component_system": {
+    "path": "systems/09_COMPONENT_SYSTEM.md",
+    "tags": ["systems", "components", "react"]
+  },
+  "luxury_brand_system": {
+    "path": "systems/31_LUXURY_BRAND_SYSTEM.md",
+    "tags": ["systems", "luxury", "restraint"]
+  },
+  "ai_product_system": {
+    "path": "systems/32_AI_PRODUCT_SYSTEM.md",
+    "tags": ["systems", "ai", "inputs"]
+  },
+  "portfolio_system": {
+    "path": "systems/33_PORTFOLIO_SYSTEM.md",
+    "tags": ["systems", "portfolio", "gallery"]
+  },
+  "creative_qa": {
+    "path": "review/12_CREATIVE_QA.md",
+    "tags": ["review", "qa", "testing"]
+  },
+  "agency_review_system": {
+    "path": "review/13_AGENCY_REVIEW_SYSTEM.md",
+    "tags": ["review", "agency", "governance"]
+  },
+  "design_decision_engine": {
+    "path": "review/20_DESIGN_DECISION_ENGINE.md",
+    "tags": ["review", "decisions", "checklist"]
+  },
+  "awwwards_system": {
+    "path": "review/21_AWWWARDS_EVALUATION_SYSTEM.md",
+    "tags": ["review", "awwwards", "scoring"]
+  },
+  "creative_direction_generator": {
+    "path": "review/22_CREATIVE_DIRECTION_GENERATOR.md",
+    "tags": ["review", "creative-direction", "discovery"]
+  },
+  "final_creative_review": {
+    "path": "review/25_FINAL_CREATIVE_REVIEW.md",
+    "tags": ["review", "final-review", "signoff"]
+  },
+  "jury_simulator": {
+    "path": "review/26_JURY_SIMULATOR.md",
+    "tags": ["review", "jury", "simulation"]
+  },
+  "design_governance_system": {
+    "path": "review/41_DESIGN_GOVERNANCE_SYSTEM.md",
+    "tags": ["review", "governance", "compliance"]
+  },
+  "concept_validation": {
+    "path": "review/42_CONCEPT_VALIDATION_SYSTEM.md",
+    "tags": ["review", "concept", "validation"]
+  },
+  "post_launch_intelligence": {
+    "path": "review/43_POST_LAUNCH_INTELLIGENCE.md",
+    "tags": ["review", "post-launch", "analytics"]
+  },
+  "launch_checklist": {
+    "path": "review/LAUNCH_CHECKLIST.md",
+    "tags": ["review", "launch", "pre-release"]
+  },
+  "submission_guide": {
+    "path": "review/SUBMISSION_GUIDE.md",
+    "tags": ["review", "submission", "awards"]
+  }
+}

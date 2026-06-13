@@ -1,0 +1,51 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem clamp(1.5rem, 4vw, 3rem);
+}
+
+.suggestionBtn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: none; /* custom cursor */
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.suggestionBtn:hover {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-surface-elevated);
+  transform: translateY(-1px);
+}
+
+.pillText {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-secondary);
+}
+
+.suggestionBtn:hover .pillText {
+  color: var(--color-ink);
+}
+
+.arrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  transition:
+    transform var(--dur-base) var(--ease-sovereign),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.suggestionBtn:hover .arrow {
+  transform: translate(2px, -2px);
+  color: var(--color-accent);
+}

@@ -1,0 +1,18 @@
+.mediaWrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.innerContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
